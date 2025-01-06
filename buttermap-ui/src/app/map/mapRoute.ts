@@ -50,7 +50,6 @@ export class OptimizedRouteGenerator {
         return new Grid(gridMatrix);
     }
 
-
     private convertPathToDirections(path: number[][]): { directions: string; routeCoordinates: SimpleCoordinate[] } {
         const directions: string[] = [];
         const routeCoordinates: SimpleCoordinate[] = [];

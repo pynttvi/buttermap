@@ -1,3 +1,4 @@
+'use client'
 import {CoordinateChange} from "@/app/model/coordinate";
 import React, {useCallback, useEffect, useState} from "react";
 import {
@@ -24,11 +25,10 @@ const listPendingChanges: () => Promise<ChangeFile[]> = async () => {
         if (response.ok) {
             return result
         } else {
-            alert('Error fetching changes');
+            console.error('Error fetching changes');
         }
     } catch (error) {
         console.error('Error:', error);
-        alert('An unexpected error occurred');
     }
 };
 

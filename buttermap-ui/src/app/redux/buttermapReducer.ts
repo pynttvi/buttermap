@@ -7,7 +7,7 @@ import {ButtermapState, initialMapState} from "@/app/redux/buttermapState";
 import {MapMode} from "@/app/model/common";
 import {CoordinateChange, FullCoordinate, SimpleCoordinate} from "@/app/model/coordinate";
 import {ChangeFile} from "@/app/views/coordinateChangesList";
-import {RouteResult} from "@/app/map/route";
+import {RouteResult} from "@/app/map/mapRoute";
 
 
 export type SetValuePayload = {

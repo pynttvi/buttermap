@@ -18,6 +18,7 @@
     "jsx": "preserve",
     "incremental": true,
     "outDir": ".next", // Keep compiled output clean
+    "baseUrl": "./",
     "plugins": [
       {
         "name": "next"

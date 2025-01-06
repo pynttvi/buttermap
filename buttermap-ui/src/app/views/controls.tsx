@@ -1,3 +1,4 @@
+'use client'
 import Section from "@/app/components/section";
 import ToggleButton from "@/app/components/toggleButton";
 import RadioButtonGroup from "@/app/components/radioButtonGroup";
@@ -19,7 +20,7 @@ import {
 import {ButtermapState} from "@/app/redux/buttermapState";
 import {shallowEqual} from "react-redux";
 import {AnyCoordinate, CoordinateFeature} from "@/app/model/coordinate";
-import {OptimizedRouteGenerator} from "@/app/map/route";
+import {OptimizedRouteGenerator} from "@/app/map/mapRoute";
 import {deepEqual} from "@/app/utils";
 
 const modeOptions: { name: string, value: string }[] = Object.entries(MapMode).map((mm) => ({

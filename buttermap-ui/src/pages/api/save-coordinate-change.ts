@@ -2,8 +2,12 @@
 import fs from 'fs';
 import path from 'path';
 import {NextApiRequest, NextApiResponse} from "next";
+import {notFound} from "next/navigation";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    if (process.env.NODE_ENV === "production") {
+        notFound(); // Render a 404 in production
+    }
     if (req.method === 'POST') {
         const changesPath = '/map changes'; // Relative to the base folder
         const savePath = path.join(changesPath);

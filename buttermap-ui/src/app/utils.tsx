@@ -1,3 +1,4 @@
+'use client'
 export function capitalizeFirstChar(str: string): string {
     if (!str) return ""; // Handle empty strings
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -37,6 +38,7 @@ export function deepEqual(obj1: any, obj2: any) {
 }
 
 export const downloadJson = (jsonData: any, fileName: string) => {
+    if (!document) return;
     const jsonString = JSON.stringify(jsonData, null, 2);
     const blob = new Blob([jsonString], { type: "application/json" });
     const url = URL.createObjectURL(blob);

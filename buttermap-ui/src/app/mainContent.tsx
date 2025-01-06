@@ -15,6 +15,7 @@ import ViewCoordinateModal from "@/app/views/viewCoordinateModal";
 
 
 export const MainContent: React.FC<{}> = ({}) => {
+
     const dispatch = useAppDispatch(); // Dispatch actions
 
     const settings = useAppSelector((state: ButtermapState) => state.settings, shallowEqual);

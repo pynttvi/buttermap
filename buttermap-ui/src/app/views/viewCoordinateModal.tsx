@@ -1,3 +1,4 @@
+'use client'
 import React, {useCallback, useEffect, useState} from "react";
 import {CoordinateChange, CoordinateFeature} from "@/app/model/coordinate";
 import {setViewModalOpen, useAppDispatch, useAppSelector} from "@/app/redux/buttermapReducer";
@@ -5,9 +6,6 @@ import {ButtermapState} from "@/app/redux/buttermapState";
 import {shallowEqual} from "react-redux";
 import Modal from "@/app/components/modal";
 import {downloadJson} from "@/app/utils";
-
-interface Props {
-}
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -20,11 +18,11 @@ const acceptChange = async (fileName: string) => {
         if (response.ok) {
             console.log("Ok")
         } else {
-            alert('Error fetching changes');
+            console.error('Error fetching changes');
         }
     } catch (error) {
         console.error('Error:', error);
-        alert('An unexpected error occurred');
+        console.error('An unexpected error occurred');
     }
 };
 
@@ -34,7 +32,7 @@ const downloadChange = (change: CoordinateChange | null) => {
 
 const bm = ["z", "o", "m", "b", "i", "e"]
 
-const ViewCoordinateModal: React.FC<Props> = () => {
+const ViewCoordinateModal: React.FC = () => {
     const dispatch = useAppDispatch(); // Dispatch actions
 
     const isOpen = useAppSelector((state: ButtermapState) => state.viewModalOpen, shallowEqual);
@@ -43,10 +41,9 @@ const ViewCoordinateModal: React.FC<Props> = () => {
 
     const changes = useAppSelector((state: ButtermapState) => state.changes, shallowEqual);
     const [change, setChange] = useState<CoordinateChange | null>(null);
-    const [bestMud, setBetMud] = useState<string>(bm.join(""));
+    const [bestMud, setBestMud] = useState<string>(bm.join(""));
 
     const doAcceptChange = useCallback(() => {
-
         if (isDev) {
             acceptChange(activeChange?.fileName ?? "")
         } else {
@@ -58,7 +55,7 @@ const ViewCoordinateModal: React.FC<Props> = () => {
     const onAccept = useCallback(() => {
         doAcceptChange()
         dispatch(setViewModalOpen(false));
-    }, [change, coordinate]);
+    }, [dispatch, change, coordinate]);
 
     useEffect(() => {
         if (!coordinate) return;
@@ -78,7 +75,7 @@ const ViewCoordinateModal: React.FC<Props> = () => {
         <Modal
             title={"View Coordinate"}
             isOpen={isOpen}
-            onAccept={bestMud.indexOf(bm.join("")) !== -1 ? onAccept : undefined}
+            onAccept={bestMud.indexOf(bm.join("")) !== -1 && activeChange ? onAccept : undefined}
             acceptButtonText={isDev ? "Accept" : "Download change file"}
             onCancel={() => dispatch(setViewModalOpen(false))}
         >
@@ -224,7 +221,7 @@ const ViewCoordinateModal: React.FC<Props> = () => {
                             label={"Bestmud"}
                             name={bestMud}
                             value={bestMud}
-                            onChange={(event) => setBetMud(event.target.value)}/>*/}
+                            onChange={(event) => setBestMud(event.target.value)}/>*/}
                     </section>
                 )}
             </div>

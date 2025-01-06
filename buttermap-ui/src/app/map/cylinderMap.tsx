@@ -1,3 +1,4 @@
+'use client'
 import React, {useEffect, useMemo, useRef, useState} from 'react';
 import * as THREE from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
@@ -22,6 +23,8 @@ interface CameraSettings {
 }
 
 function generateProceduralTexture(size = 512) {
+    if (!document) return;
+
     const canvas = document.createElement('canvas');
     canvas.width = size;
     canvas.height = size;
@@ -69,6 +72,8 @@ function generateProceduralTexture(size = 512) {
 
 const CylinderMap: React.FC<CylinderMapProps> = ({gridData, onDoubleClick}) => {
     const mountRef = useRef<HTMLDivElement | null>(null);
+
+    if(!document) return null
 
     const coords = useAppSelector(
         (state: ButtermapState) => state.coords,
@@ -286,6 +291,7 @@ const CylinderMap: React.FC<CylinderMapProps> = ({gridData, onDoubleClick}) => {
     useEffect(() => {
         const mount = mountRef.current;
         if (!mount) return
+        if (!document) return;
 
         if (!renderer || !controls) return;
 

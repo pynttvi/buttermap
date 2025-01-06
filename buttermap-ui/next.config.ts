@@ -9,7 +9,9 @@ const staticPath = path.join(projectRoot, 'public', 'static');
 
 console.log('Project Root:', projectRoot);
 console.log('Static Path:', staticPath);
+const isDev = process.env.NODE_ENV === "development"
 const nextConfig: NextConfig = {
+    baseUrl: "./",
     reactStrictMode: true,
     experimental: {
         turbo: {

@@ -1,3 +1,4 @@
+'use client'
 import React, {FC, useCallback, useMemo, useState} from 'react';
 import {
     CoordinateChange,
@@ -42,13 +43,13 @@ const saveChange = async (coordinateChange: CoordinateChange) => {
 
         const result = await response.json();
         if (response.ok) {
-            alert('File saved successfully: ' + result.filePath);
+            console.error('File saved successfully: ' + result.filePath);
         } else {
-            alert('Error saving file: ' + result.error);
+            console.error('Error saving file: ' + result.error);
         }
     } catch (error) {
         console.error('Error:', error);
-        alert('An unexpected error occurred');
+        console.error('An unexpected error occurred');
     }
 };
 

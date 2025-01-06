@@ -17,6 +17,8 @@ const MudMap: React.FC<MudMapProps> = ({
                                            onDoubleClick,
                                            charSize = 16,
                                        }) => {
+    if(!document) return null
+
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const containerRef = useRef<HTMLDivElement | null>(null);
     const coordinateChanges = useAppSelector(
