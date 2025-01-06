@@ -35,7 +35,7 @@ jobs:
       - name: Detect package manager
         id: detect-package-manager
         run: |
-          cd app # Navigate to the subfolder
+          cd buttermap-ui # Navigate to the subfolder
           if [ -f "${{ github.workspace }}/app/yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
