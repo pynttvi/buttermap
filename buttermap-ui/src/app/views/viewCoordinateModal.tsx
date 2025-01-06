@@ -4,8 +4,7 @@ import {setViewModalOpen, useAppDispatch, useAppSelector} from "@/app/redux/butt
 import {ButtermapState} from "@/app/redux/buttermapState";
 import {shallowEqual} from "react-redux";
 import Modal from "@/app/components/modal";
-import TextField from "@/app/components/textField";
-import {ChangeFile} from "@/app/views/coordinateChangesList";
+import {downloadJson} from "@/app/utils";
 
 interface Props {
 }
@@ -29,8 +28,8 @@ const acceptChange = async (fileName: string) => {
     }
 };
 
-const sendChangeRequest = async (change: ChangeFile | null) => {
-
+const downloadChange = (change: CoordinateChange | null) => {
+    downloadJson(change, `coordinate-change-${Date.now()}.json`)
 };
 
 const bm = ["z", "o", "m", "b", "i", "e"]
@@ -44,21 +43,22 @@ const ViewCoordinateModal: React.FC<Props> = () => {
 
     const changes = useAppSelector((state: ButtermapState) => state.changes, shallowEqual);
     const [change, setChange] = useState<CoordinateChange | null>(null);
-    const [bestMud, setBetMud] = useState<string>("");
+    const [bestMud, setBetMud] = useState<string>(bm.join(""));
 
     const doAcceptChange = useCallback(() => {
-        if (!isDev) {
+
+        if (isDev) {
             acceptChange(activeChange?.fileName ?? "")
         } else {
-            sendChangeRequest(activeChange)
+            downloadChange(change)
         }
-    }, [activeChange]);
+    }, [change, activeChange]);
 
 
     const onAccept = useCallback(() => {
         doAcceptChange()
         dispatch(setViewModalOpen(false));
-    }, [coordinate]);
+    }, [change, coordinate]);
 
     useEffect(() => {
         if (!coordinate) return;
@@ -79,7 +79,7 @@ const ViewCoordinateModal: React.FC<Props> = () => {
             title={"View Coordinate"}
             isOpen={isOpen}
             onAccept={bestMud.indexOf(bm.join("")) !== -1 ? onAccept : undefined}
-            acceptButtonText={isDev ? "Accept" : "Send change request"}
+            acceptButtonText={isDev ? "Accept" : "Download change file"}
             onCancel={() => dispatch(setViewModalOpen(false))}
         >
             <div className="p-6 bg-black rounded-lg shadow-md">
@@ -220,11 +220,11 @@ const ViewCoordinateModal: React.FC<Props> = () => {
                                 </p>
                             )}
                         </div>
-                        <TextField
+                        {/*                        <TextField
                             label={"Bestmud"}
                             name={bestMud}
                             value={bestMud}
-                            onChange={(event) => setBetMud(event.target.value)}/>
+                            onChange={(event) => setBetMud(event.target.value)}/>*/}
                     </section>
                 )}
             </div>

@@ -10,8 +10,6 @@ import {
 } from "@/app/redux/buttermapReducer";
 import {ButtermapState} from "@/app/redux/buttermapState";
 import {shallowEqual} from "react-redux";
-import LabeledButton from "@/app/components/labelledButton";
-import Section from "@/app/components/section";
 import {deepEqual} from "@/app/utils";
 
 export type ChangeFile = { fileName: string, change: CoordinateChange }
@@ -50,7 +48,6 @@ const CoordinateChangesList: React.FC<CoordinateChangesListProps> = ({}) => {
         (state: ButtermapState) => state.changes,
         deepEqual
     );
-    const [update, setUpdate] = useState<number>(0)
 
     useEffect(() => {
         if (!isDev) {
@@ -59,10 +56,6 @@ const CoordinateChangesList: React.FC<CoordinateChangesListProps> = ({}) => {
                 dispatch(setChanges(pc.map((pc) => pc.change)))
             })
         }
-    }, [update]);
-
-    useEffect(() => {
-        console.log("CHANGES", changes, isDev)
     }, [changes]);
 
 
@@ -82,12 +75,12 @@ const CoordinateChangesList: React.FC<CoordinateChangesListProps> = ({}) => {
         [changes]);
 
 
-    if (!isDev && changeFiles.length === 0) return null
-    if (isDev && changes.length === 0) return null
+    if (isDev && changeFiles.length === 0) return null
+    if (!isDev && changes.length === 0) return null
 
     return (
         <>
-            {!isDev && (
+            {isDev && (
                 <>
                     <ul>
                         {changeFiles.map((change => (
@@ -103,9 +96,8 @@ const CoordinateChangesList: React.FC<CoordinateChangesListProps> = ({}) => {
                 </>
             )}
 
-            {isDev && (
+            {!isDev && (
                 <>
-                    foo
                     <ul>
                         {changes.map(((change, index) => (
                             <li key={`change-${index}`} className={"mb-2"}>
