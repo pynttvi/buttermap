@@ -1,0 +1,15 @@
+{
+    "action": "ADD",
+    "coord": {
+        "x": 490,
+        "y": 78,
+        "z": 0,
+        "char": "g",
+        "color": "#007500"
+    },
+    "status": "ACCEPTED",
+    "features": [
+        4
+    ],
+    "name": "unknown"
+}

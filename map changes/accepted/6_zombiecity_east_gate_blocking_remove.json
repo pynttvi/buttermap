@@ -1,0 +1,18 @@
+{
+    "action": "REMOVE",
+    "coord": {
+        "x": 124,
+        "y": 55,
+        "z": 0,
+        "char": "#",
+        "color": "#847D84",
+        "features": [
+            0
+        ],
+        "name": "zombiecity_east_gate"
+    },
+    "status": "ACCEPTED",
+    "features": [
+        0
+    ]
+}

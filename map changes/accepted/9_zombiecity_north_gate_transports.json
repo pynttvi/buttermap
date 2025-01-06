@@ -1,0 +1,37 @@
+{
+  "action": "ADD",
+  "coord": {
+    "x": 123,
+    "y": 54,
+    "z": 0,
+    "char": "#",
+    "color": "#847D84",
+    "features": [
+      0
+    ]
+  },
+  "status": "ACCEPTED",
+  "name": "zombiecity_north_gate",
+  "transports": [
+    {
+      "targetName": "cantador",
+      "moveCommand": "s;3 e;s;w;buy transport to ravenkall;2 w;6 n;2 e;2 n;w"
+    },
+    {
+      "targetName": "erend",
+      "moveCommand": "s;3 e;s;w;buy transport to erend"
+    },
+    {
+      "targetName": "sands",
+      "moveCommand": "s;3 e;s;w;buy transport to sands"
+    },
+    {
+      "targetName": "unknown",
+      "moveCommand": "s;3 e;s;w;buy transport to unknown"
+    },
+    {
+      "targetName": "elven_isle",
+      "moveCommand": "s;3 e;s;w;buy transport to elven isle"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+    "action": "ADD",
+    "coord": {
+        "x": 119,
+        "y": 55,
+        "z": 0,
+        "char": "+",
+        "color": "#847D84"
+    },
+    "status": "ACCEPTED",
+    "name": "despair",
+    "features": [4]
+}

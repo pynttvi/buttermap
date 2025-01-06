@@ -1,0 +1,15 @@
+{
+    "action": "ADD",
+    "coord": {
+        "x": 259,
+        "y": 102,
+        "z": 0,
+        "char": "X",
+        "color": "#FFFF00"
+    },
+    "status": "ACCEPTED",
+    "features": [
+        4
+    ],
+    "name": "elven_isle"
+}

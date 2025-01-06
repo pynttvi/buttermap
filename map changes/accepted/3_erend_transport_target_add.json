@@ -1,0 +1,13 @@
+{
+    "action": "ADD",
+    "coord": {
+        "x": 431,
+        "y": 134,
+        "z": 0,
+        "char": "g",
+        "color": "#007500"
+    },
+    "status": "ACCEPTED",
+    "name": "erend",
+    "features": [4]
+}

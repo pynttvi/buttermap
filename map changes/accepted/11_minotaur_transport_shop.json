@@ -1,0 +1,34 @@
+{
+    "action": "NONE",
+    "coord": {
+        "x": 480,
+        "y": 147,
+        "z": 0,
+        "char": "d",
+        "color": "#FFFF00"
+    },
+    "status": "ACCEPTED",
+    "name": "minotaur",
+    "transports": [
+        {
+            "targetName": "despair",
+            "moveCommand": "enter;s;buy transport to zombiecity;9 w"
+        },
+        {
+            "targetName": "cantador",
+            "moveCommand": "enter;s;buy transport to ravenkall;2 w;6 n;2 e;2 n;w"
+        },
+        {
+            "targetName": "erend",
+            "moveCommand": "enter;s;buy transport to erend"
+        },
+        {
+            "targetName": "unknown",
+            "moveCommand": "enter;s;buy transport to unknown"
+        },
+        {
+            "targetName": "elven_isle",
+            "moveCommand": "enter;s;buy transport to elven isle"
+        }
+    ]
+}

@@ -1,0 +1,37 @@
+{
+  "action": "ADD",
+  "coord": {
+    "x": 142,
+    "y": 149,
+    "z": 0,
+    "char": "#",
+    "color": "#847D84",
+    "features": [
+      0
+    ]
+  },
+  "transports": [
+    {
+      "targetName": "despair",
+      "moveCommand": "e;3 s;2 e;2 s;2 e;3 s;buy transport to zombiecity;9 w"
+    },
+    {
+      "targetName": "erend",
+      "moveCommand": "e;3 s;2 e;2 s;2 e;3 s;buy transport to erend"
+    },
+    {
+      "targetName": "sands",
+      "moveCommand": "e;3 s;2 e;2 s;2 e;3 s;buy transport to sands"
+    },
+    {
+      "targetName": "unknown",
+      "moveCommand": "e;3 s;2 e;2 s;2 e;3 s;buy transport to unknown"
+    },
+    {
+      "targetName": "elven_isle",
+      "moveCommand": "e;3 s;2 e;2 s;2 e;3 s;buy transport to elven isle"
+    }
+  ],
+  "status": "ACCEPTED",
+  "name": "ravenkall_north_gate"
+}

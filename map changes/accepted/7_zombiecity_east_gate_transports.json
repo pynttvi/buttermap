@@ -1,0 +1,34 @@
+{
+    "action": "ADD",
+    "coord": {
+        "x": 124,
+        "y": 55,
+        "z": 0,
+        "char": "#",
+        "color": "#847D84"
+    },
+    "transports": [
+        {
+            "targetName": "cantador",
+            "moveCommand": "2 w;4 n;w;buy transport to ravenkall;2 w;6 n;2 e;3 n;w"
+        },
+        {
+            "targetName": "erend",
+            "moveCommand": "2 w;4 n;w;buy transport to erend"
+        },
+        {
+            "targetName": "sands",
+            "moveCommand": "2 w;4 n;w;buy transport to sands"
+        },
+        {
+            "targetName": "unknown",
+            "moveCommand": "2 w;4 n;w;buy transport to unknown"
+        },
+        {
+            "targetName": "elven_isle",
+            "moveCommand": "2 w;4 n;w;buy transport to elven isle"
+        }
+    ],
+    "name": "zombiecity_east_gate",
+    "status": "ACCEPTED"
+}

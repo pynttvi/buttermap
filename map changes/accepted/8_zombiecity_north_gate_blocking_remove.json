@@ -1,0 +1,17 @@
+{
+    "action": "REMOVE",
+    "coord": {
+        "x": 123,
+        "y": 54,
+        "z": 0,
+        "char": "#",
+        "color": "#847D84",
+        "features": [
+            0
+        ]
+    },
+    "status": "ACCEPTED",
+    "features": [
+        0
+    ]
+}

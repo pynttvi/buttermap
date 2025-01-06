@@ -1,0 +1,13 @@
+{
+    "action": "ADD",
+    "coord": {
+        "x": 141,
+        "y": 148,
+        "z": 0,
+        "char": "i",
+        "color": "#7B8600"
+    },
+    "status": "ACCEPTED",
+    "name": "cantador",
+    "features": [4]
+}

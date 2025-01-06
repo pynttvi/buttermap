@@ -1,0 +1,14 @@
+{
+    "action": "ADD",
+    "coord": {
+        "x": 501,
+        "y": 54,
+        "z": 0,
+        "char": "H",
+        "color": "#7B8600"
+    },
+    "status": "ACCEPTED",
+    "features": [
+        6
+    ]
+}

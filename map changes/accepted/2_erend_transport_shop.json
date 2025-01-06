@@ -1,0 +1,36 @@
+{
+    "action": "ADD",
+    "coord": {
+        "x": 430,
+        "y": 135,
+        "z": 0,
+        "char": "b",
+        "color": "#00FF08"
+    },
+    "status": "ACCEPTED",
+    "charChange": "?",
+    "color": "#EEEEEE",
+    "transports": [
+        {
+            "targetName": "despair",
+            "moveCommand": "enter;buy transport to zombiecity;9 w"
+        },
+        {
+            "targetName": "cantador",
+            "moveCommand": "enter;buy transport to ravenkall;2 w;6 n;2 e;2 n;w"
+        },
+        {
+            "targetName": "sands",
+            "moveCommand": "enter;buy transport to sands"
+        },
+        {
+            "targetName": "unknown",
+            "moveCommand": "enter;buy transport to unknown"
+        },
+        {
+            "targetName": "elven_isle",
+            "moveCommand": "enter;buy transport to elven isle"
+        }
+    ],
+    "name": "erend_transport_shop"
+}

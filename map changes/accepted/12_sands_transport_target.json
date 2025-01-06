@@ -1,0 +1,15 @@
+{
+    "action": "ADD",
+    "coord": {
+        "x": 474,
+        "y": 133,
+        "z": 0,
+        "char": "d",
+        "color": "#FFFF00"
+    },
+    "status": "ACCEPTED",
+    "name": "sands",
+    "features": [
+        4
+    ]
+}

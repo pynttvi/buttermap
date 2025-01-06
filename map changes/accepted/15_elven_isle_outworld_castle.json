@@ -1,0 +1,15 @@
+{
+    "action": "ADD",
+    "coord": {
+        "x": 254,
+        "y": 92,
+        "z": 0,
+        "char": "X",
+        "color": "#7B8600"
+    },
+    "status": "ACCEPTED",
+    "name": "elven_isle_outworld_castle",
+    "features": [
+        6
+    ]
+}
