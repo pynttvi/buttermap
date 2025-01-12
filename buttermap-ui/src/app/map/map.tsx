@@ -1,10 +1,10 @@
 'use client';
-import React, {useEffect, useMemo, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 
 import {useAppSelector} from "@/app/redux/buttermapReducer";
 import {ButtermapState} from "@/app/redux/buttermapState";
 import {shallowEqual} from "react-redux";
-import {BasicCoordinate, FullCoordinate, SimpleCoordinate} from "@/app/model/coordinate";
+import {FullCoordinate, SimpleCoordinate} from "@/app/model/coordinate";
 
 interface MudMapProps {
     coords: FullCoordinate[];
@@ -17,7 +17,6 @@ const MudMap: React.FC<MudMapProps> = ({
                                            onDoubleClick,
                                            charSize = 16,
                                        }) => {
-    if(!document) return null
 
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const containerRef = useRef<HTMLDivElement | null>(null);
@@ -25,12 +24,14 @@ const MudMap: React.FC<MudMapProps> = ({
         (state: ButtermapState) => state.changes,
         shallowEqual
     );
+
     const highlightedCoords = useAppSelector((state: ButtermapState) => state.highlightedCoords, shallowEqual);
     const activeRoute = useAppSelector((state: ButtermapState) => state.activeRoute, shallowEqual);
     const namedCoordinates = useMemo(() => {
         return coords.filter((c) => c.name)
     }, [coords])
-    const centerOnCoordinate = (coordinate: SimpleCoordinate) => {
+
+/*    const centerOnCoordinate = useCallback((coordinate: SimpleCoordinate) => {
         if (!containerRef.current || !canvasRef.current) return;
 
         const containerWidth = containerRef.current.clientWidth;
@@ -43,13 +44,14 @@ const MudMap: React.FC<MudMapProps> = ({
             x: Math.max(0, centerX),
             y: Math.max(0, centerY),
         });
-    };
-    const [offset, setOffset] = useState({ x: 0, y: 0 });
+    }, [charSize]);*/
+
+    const [offset, setOffset] = useState({x: 0, y: 0});
     const [isDragging, setIsDragging] = useState(false);
     const [dragStart, setDragStart] = useState<{ x: number; y: number } | null>(null);
 
     // Rendering logic
-    const renderMap = () => {
+    const renderMap = useCallback(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
@@ -71,9 +73,9 @@ const MudMap: React.FC<MudMapProps> = ({
 
         // Build a 2D grid representation of the map
         const grid: Record<number, Record<number, { char: string; color: string | null }>> = {};
-        coords.forEach(({ x, y, char, color }) => {
+        coords.forEach(({x, y, char, color}) => {
             if (!grid[y]) grid[y] = {};
-            grid[y][x] = { char, color: color || "#fff" };
+            grid[y][x] = {char, color: color || "#fff"};
         });
 
         // Render row by row with highlighting and offset
@@ -118,7 +120,7 @@ const MudMap: React.FC<MudMapProps> = ({
 
                 namedCoordinates.forEach((coord) => {
                     if (coord && coord?.x === x && coord?.y === y) {
-                        ctx.fillStyle = `rgb(0,66,66)`;
+                        ctx.fillStyle = `rgb(0, 66, 66)`;
                         ctx.fillRect(
                             x * charSize - offset.x,
                             y * charSize - offset.y,
@@ -139,11 +141,11 @@ const MudMap: React.FC<MudMapProps> = ({
                 }
             }
         }
-    };
+    },[activeRoute?.routeCoordinates, charSize, coordinateChanges, coords, highlightedCoords, namedCoordinates, offset.x, offset.y]);
 
     useEffect(() => {
         renderMap();
-    }, [coords, charSize, highlightedCoords, coordinateChanges, offset]);
+    }, [coords, charSize, highlightedCoords, coordinateChanges, offset, renderMap]);
 
     // Handle double-click events
     const handleCanvasDoubleClick = (event: React.MouseEvent<HTMLCanvasElement>) => {
@@ -168,7 +170,7 @@ const MudMap: React.FC<MudMapProps> = ({
     // Handle mouse down for dragging
     const handleMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
         setIsDragging(true);
-        setDragStart({ x: event.clientX, y: event.clientY });
+        setDragStart({x: event.clientX, y: event.clientY});
     };
 
     // Handle mouse move for dragging
@@ -183,7 +185,7 @@ const MudMap: React.FC<MudMapProps> = ({
             y: Math.max(0, prevOffset.y + dy),
         }));
 
-        setDragStart({ x: event.clientX, y: event.clientY });
+        setDragStart({x: event.clientX, y: event.clientY});
     };
 
     // Handle mouse up to stop dragging

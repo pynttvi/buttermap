@@ -208,30 +208,6 @@ export class OptimizedRouteGenerator {
         };
     }
 
-    getWrappedNeighbors(x: number, y: number, grid: Grid): number[][] {
-        const neighbors: number[][] = [];
-        const maxX = this.maxX + 1;
-        const maxY = this.maxY + 1;
-
-        const potentialNeighbors = [
-            [x - 1, y], // Left
-            [x + 1, y], // Right
-            [x, y - 1], // Up
-            [x, y + 1], // Down
-        ];
-
-        for (const [nx, ny] of potentialNeighbors) {
-            const wrappedX = (nx + maxX) % maxX;
-            const wrappedY = (ny + maxY) % maxY;
-
-            if (grid.isWalkableAt(wrappedX, wrappedY)) {
-                neighbors.push([wrappedX, wrappedY]);
-            }
-        }
-
-        return neighbors;
-    }
-
     private customAStarFinder(
         start: SimpleCoordinate,
         end: SimpleCoordinate,
@@ -287,6 +263,43 @@ export class OptimizedRouteGenerator {
         return [];
     }
 
+    getWrappedNeighbors(x: number, y: number, grid: Grid): number[][] {
+        const neighbors: number[][] = [];
+        const maxX = this.maxX + 1;
+        const maxY = this.maxY + 1;
+
+        const potentialNeighbors = [
+            [x - 1, y], // Left
+            [x + 1, y], // Right
+            [x, y - 1], // Up
+            [x, y + 1], // Down
+        ];
+
+        for (const [nx, ny] of potentialNeighbors) {
+            const wrappedX = (nx + maxX) % maxX;
+            const wrappedY = (ny + maxY) % maxY;
+
+            if (grid.isWalkableAt(wrappedX, wrappedY)) {
+                neighbors.push([wrappedX, wrappedY]);
+            }
+        }
+
+        return neighbors;
+    }
+
+    createWrappedGrid(grid: Grid): Grid {
+        const getWrappedNeighbors = this.getWrappedNeighbors
+        return new Proxy(grid, {
+            get(target: Grid, prop: keyof Grid) {
+                if (prop === "getNeighbors") {
+                    return (node: SimpleCoordinate): number[][] =>
+                        getWrappedNeighbors(node.x, node.y, target);
+                }
+                return target[prop];
+            },
+        }) as Grid;
+    }
+
     generateRoute(
         start: SimpleCoordinate,
         end: SimpleCoordinate,
@@ -297,19 +310,7 @@ export class OptimizedRouteGenerator {
         const wrappedEnd = this.wrapCoordinate(end);
 
         const grid = this.initializeGrid(options.avoidFeatures);
-
-        const getWrappedNeighbors = this.getWrappedNeighbors
-        const wrappedGrid = new Proxy(grid, {
-            get(target: Grid, prop) {
-                if (prop === "getNeighbors") {
-                    return (node: any, diagonalMovement: DiagonalMovement) =>
-                        getWrappedNeighbors(node.x, node.y, target);
-                }
-                // @ts-ignore
-                return target[prop];
-            },
-        });
-
+        const wrappedGrid = this.createWrappedGrid(grid)
 
         const octileHeuristic = (dx: number, dy: number): number => {
             const F = Math.SQRT2 - 1;
@@ -322,7 +323,7 @@ export class OptimizedRouteGenerator {
             weight: 1,
         });
 
-        let rawPath = this.customAStarFinder(
+        const rawPath = this.customAStarFinder(
             wrappedStart,
             wrappedEnd,
             wrappedGrid
@@ -415,10 +416,5 @@ export class OptimizedRouteGenerator {
             directions: "",
             routeCoordinates: [],
         };
-    }
-
-
-    private isAvoidable(coord: FullCoordinate | undefined, avoidFeatures: CoordinateFeature[]): boolean {
-        return coord?.features?.some((feature) => avoidFeatures.includes(feature)) ?? false;
     }
 }

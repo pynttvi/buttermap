@@ -1,26 +1,19 @@
 // import Image from "next/image";
 'use client'
-import React, {useEffect, useState} from "react";
+import React from "react";
 import dynamic from "next/dynamic";
+import NonClientOnlyPage from "@/app/nonClientOnlyPage";
 
 
 const DynamicComponent = dynamic(() => import('./clientOnlyPage'), {ssr: false});
 
+const isDev = process.env.NODE_ENV === "development";
 
 export default function Home() {
-    const [clientOnlyState, setClientOnlyState] = useState<string | null>(null);
-
-    const [isClient, setIsClient] = useState(false);
-
-    useEffect(() => {
-        setIsClient(true); // Runs only on the client
-    }, []);
-
-    useEffect(() => {
-        setClientOnlyState("Client-Side Value"); // Only runs on the client
-    }, []);
-
     return (
-        <DynamicComponent/>
+        <>
+            {!isDev && <DynamicComponent/>}
+            {isDev && <NonClientOnlyPage/>}
+        </>
     )
 }

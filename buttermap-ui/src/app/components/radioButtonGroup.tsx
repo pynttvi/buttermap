@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import {capitalizeFirstChar} from "@/app/utils";
 
 interface RadioButtonGroupProps {
     label: string
     selectedOption: string,
-    setSelectedOption: (setSelectedOption: any) => void
+    setSelectedOption: (setSelectedOption: string) => void
     options: Array<{name: string, value: string}>
 }
 const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({label, selectedOption, setSelectedOption, options}) => {

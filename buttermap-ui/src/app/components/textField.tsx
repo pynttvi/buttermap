@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 interface TextFieldProps {
     label: string;
@@ -11,6 +11,7 @@ interface TextFieldProps {
     maxLength?: number; // Maximum length of input
     regex?: RegExp; // Regex pattern for validation
     regexErrorMessage?: string; // Error message for regex validation
+    light?: boolean
 }
 
 const TextField: React.FC<TextFieldProps> = ({
@@ -24,11 +25,12 @@ const TextField: React.FC<TextFieldProps> = ({
                                                  maxLength,
                                                  regex,
                                                  regexErrorMessage = 'Invalid input format', // Default regex error message
+                                                 light
                                              }) => {
     const [regexError, setRegexError] = useState(false);
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const { value } = event.target;
+        const {value} = event.target;
 
         // Check regex validation if provided
         if (regex) {
@@ -59,8 +61,9 @@ const TextField: React.FC<TextFieldProps> = ({
                 onChange={handleInputChange}
                 maxLength={maxLength}
                 className={`
-          block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none
-          focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black 
+          block px-3 py-2 border shadow-sm focus:outline-none
+          w-full p-2  border-gray-700 rounded-md
+          focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm ${light ? "text-black " : "bg-gray-800 text-white"}
           ${regexError || errorMessage ? 'border-red-500' : 'border-white-300'}
         `}
             />

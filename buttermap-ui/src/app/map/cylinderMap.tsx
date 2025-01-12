@@ -1,5 +1,5 @@
 'use client'
-import React, {useEffect, useMemo, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import * as THREE from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 import {PerspectiveCamera} from 'three/src/cameras/PerspectiveCamera';
@@ -7,7 +7,7 @@ import {PerspectiveCamera} from 'three/src/cameras/PerspectiveCamera';
 import {useAppSelector} from "@/app/redux/buttermapReducer";
 import {ButtermapState} from "@/app/redux/buttermapState";
 import {shallowEqual} from "react-redux";
-import {CoordinateChange, BasicCoordinate, SimpleCoordinate} from "@/app/model/coordinate";
+import {BasicCoordinate, CoordinateChange, SimpleCoordinate} from "@/app/model/coordinate";
 import {deepEqual} from "@/app/utils";
 
 interface CylinderMapProps {
@@ -23,7 +23,6 @@ interface CameraSettings {
 }
 
 function generateProceduralTexture(size = 512) {
-    if (!document) return;
 
     const canvas = document.createElement('canvas');
     canvas.width = size;
@@ -61,7 +60,7 @@ function generateProceduralTexture(size = 512) {
         ctx.beginPath();
         ctx.moveTo(startX, startY);
         ctx.lineTo(endX, endY);
-        ctx.lineWidth = Math.random() * 1 + 0.5; // Random thin width
+        ctx.lineWidth = Math.random() + 0.5; // Random thin width
         ctx.strokeStyle = `rgba(0, 0, 0, ${Math.random() * 0.3})`; // Semi-transparent crack
         ctx.stroke();
     }
@@ -73,7 +72,6 @@ function generateProceduralTexture(size = 512) {
 const CylinderMap: React.FC<CylinderMapProps> = ({gridData, onDoubleClick}) => {
     const mountRef = useRef<HTMLDivElement | null>(null);
 
-    if(!document) return null
 
     const coords = useAppSelector(
         (state: ButtermapState) => state.coords,
@@ -96,34 +94,6 @@ const CylinderMap: React.FC<CylinderMapProps> = ({gridData, onDoubleClick}) => {
         deepEqual
     );
 
-    const centerCoordinate = (coordinate: SimpleCoordinate) => {
-        if (!controls || !camera) return;
-
-        // Calculate theta (longitude) and y (latitude) of the coordinate
-        const theta = (coordinate.x / cylinderSettings.columns) * Math.PI * 2; // Convert grid X to radians
-        const normalizedY = 1 - coordinate.y / cylinderSettings.rows; // Normalize Y (reverse direction for correct orientation)
-        const stretchedY = normalizedY * cylinderSettings.height - cylinderSettings.height / 2; // Map Y to cylinder height
-
-        // Calculate the new camera position to align the target coordinate at the center
-        const cameraDistance = camera.position.distanceTo(controls.target); // Keep the same camera distance
-        const newCameraPosition = new THREE.Vector3(
-            Math.cos(theta) * cameraDistance,
-            stretchedY,
-            -Math.sin(theta) * cameraDistance // Negate Z for correct orientation
-        );
-
-        // Update the camera position and orientation
-        camera.position.copy(newCameraPosition);
-        camera.lookAt(
-            Math.cos(theta) * cylinderSettings.radius,
-            stretchedY,
-            -Math.sin(theta) * cylinderSettings.radius
-        );
-
-        // Ensure the controls are updated
-        controls.update();
-    };
-
 
     const maxValues: { x: number; y: number } = gridData.reduce(
         (acc, coord) => ({
@@ -140,7 +110,7 @@ const CylinderMap: React.FC<CylinderMapProps> = ({gridData, onDoubleClick}) => {
         height: maxValues.y, // Proportional height based on rows and charSize
         charSize: 16,
         equatorStretch: 0.3
-    }), []);
+    }), [maxValues.x, maxValues.y]);
 
 
     const [cameraSettings] = useState<CameraSettings>({
@@ -164,7 +134,6 @@ const CylinderMap: React.FC<CylinderMapProps> = ({gridData, onDoubleClick}) => {
     const [renderer, setRenderer] = useState<THREE.WebGLRenderer | null>(null);
 
 
-
     const capSettings = useMemo(() => ({
         radius: cylinderSettings.radius,
         columns: cylinderSettings.columns,
@@ -173,7 +142,7 @@ const CylinderMap: React.FC<CylinderMapProps> = ({gridData, onDoubleClick}) => {
         phiLength: Math.PI * 2,
         thetaStart: 0,
         thetaLength: Math.PI / 5
-    }), [])
+    }), [cylinderSettings.columns, cylinderSettings.radius, cylinderSettings.rows])
 
     const topHemisphereGeometry = useMemo(() => new THREE.SphereGeometry(
         capSettings.radius, // Radius
@@ -183,7 +152,7 @@ const CylinderMap: React.FC<CylinderMapProps> = ({gridData, onDoubleClick}) => {
         capSettings.phiLength, // Phi length
         0, // Theta start
         Math.PI / 2 // Theta length (half sphere)
-    ), []);
+    ), [capSettings.columns, capSettings.phiLength, capSettings.phiStart, capSettings.radius, capSettings.rows]);
 
 
     const bottomHemisphereGeometry = useMemo(() => new THREE.SphereGeometry(
@@ -194,13 +163,15 @@ const CylinderMap: React.FC<CylinderMapProps> = ({gridData, onDoubleClick}) => {
         capSettings.phiLength, // Phi length
         Math.PI / 2, // Theta start
         Math.PI / 2 // Theta length (half sphere)
-    ), []);
+    ), [capSettings.columns, capSettings.phiLength, capSettings.phiStart, capSettings.radius, capSettings.rows]);
 
     const eggshellTexture = useMemo(() => generateProceduralTexture(512), [])
-    const hemisphereMaterial = new THREE.MeshBasicMaterial({
+
+    const hemisphereMaterial = useMemo(() => new THREE.MeshBasicMaterial({
         color: '#f5f5dc', // Base eggshell color
         map: eggshellTexture, // Use the generated procedural texture
-    });
+    }), [eggshellTexture]);
+
     const capScale = {
         x: 1,
         y: 0.2,
@@ -214,7 +185,7 @@ const CylinderMap: React.FC<CylinderMapProps> = ({gridData, onDoubleClick}) => {
         topHemisphere.position.y = cylinderSettings.height / 2; // Position at the top of the cylinder
         topHemisphere.scale.set(capScale.x, capScale.y, capScale.z);
         return topHemisphere;
-    }, [])
+    }, [capScale.x, capScale.y, capScale.z, cylinderSettings.height, hemisphereMaterial, topHemisphereGeometry])
 
     const bottomHemisphere = useMemo(() => {
         const bottomHemisphere = new THREE.Mesh(
@@ -224,7 +195,7 @@ const CylinderMap: React.FC<CylinderMapProps> = ({gridData, onDoubleClick}) => {
         bottomHemisphere.scale.set(capScale.x, capScale.y, capScale.z); // Reduce height (y-axis) by 50%
 
         return bottomHemisphere
-    }, [])
+    }, [bottomHemisphereGeometry, capScale.x, capScale.y, capScale.z, cylinderSettings.height, hemisphereMaterial])
 
     const cylinderGeometry = useMemo(() => {
         const cylinderGeometry = new THREE.CylinderGeometry(
@@ -256,7 +227,7 @@ const CylinderMap: React.FC<CylinderMapProps> = ({gridData, onDoubleClick}) => {
         cylinderGeometry.attributes.uv.needsUpdate = true;
 
         return cylinderGeometry
-    }, []);
+    }, [cylinderSettings.columns, cylinderSettings.equatorStretch, cylinderSettings.height, cylinderSettings.radius, cylinderSettings.rows]);
 
 
     useEffect(() => {
@@ -282,7 +253,7 @@ const CylinderMap: React.FC<CylinderMapProps> = ({gridData, onDoubleClick}) => {
             mount.removeChild(newRenderer.domElement);
             orbitControls.dispose();
         };
-    }, [camera]);
+    }, [camera, cylinderSettings.radius]);
 
     const namedCoordinates = useMemo(() => {
         return coords.filter((c) => c.name)
@@ -340,7 +311,7 @@ const CylinderMap: React.FC<CylinderMapProps> = ({gridData, onDoubleClick}) => {
 
                 namedCoordinates?.forEach((coord: SimpleCoordinate) => {
                     if (coord && coord.x === x && coord.y === y) {
-                        ctx.fillStyle = `rgb(0,66,66)`;
+                        ctx.fillStyle = `rgb(0, 66, 66)`;
                         ctx.fillRect(x * cylinderSettings.charSize, y * cylinderSettings.charSize, cylinderSettings.charSize, cylinderSettings.charSize);
                     }
                 });
@@ -400,10 +371,9 @@ const CylinderMap: React.FC<CylinderMapProps> = ({gridData, onDoubleClick}) => {
                 const normalizedTheta = theta / (2 * Math.PI);
 
                 // Calculate Stretched Y (latitude)
-                const stretchedY = intersection.y + cylinderSettings.height / 2; // Convert Y to [0, height]
-
+                // Convert Y to [0, height]
                 // Reverse the stretching effect
-                const correctedY = stretchedY; // Apply inverse stretch factor
+                const correctedY = intersection.y + cylinderSettings.height / 2; // Apply inverse stretch factor
                 const normalizedY = correctedY / cylinderSettings.height; // Normalize to [0, 1]
 
                 // Map to grid coordinates
@@ -429,11 +399,41 @@ const CylinderMap: React.FC<CylinderMapProps> = ({gridData, onDoubleClick}) => {
             mount.removeEventListener('dblclick', handleDoubleClick);
         };
 
-    }, [renderer, controls, gridData, highlightedCoords, coordinateChanges, cylinderSettings, activeRoute]);
+    }, [renderer, controls, gridData, highlightedCoords, coordinateChanges, cylinderSettings, activeRoute, cylinderGeometry, scene, topHemisphere, bottomHemisphere, namedCoordinates, camera, onDoubleClick]);
+
+
+    const centerCoordinate = useCallback((coordinate: SimpleCoordinate) => {
+        if (!controls || !camera || !coordinate) return;
+
+        // Calculate theta (longitude) and y (latitude) of the coordinate
+        const theta = (coordinate.x / cylinderSettings.columns) * Math.PI * 2; // Convert grid X to radians
+        const normalizedY = 1 - coordinate.y / cylinderSettings.rows; // Normalize Y (reverse direction for correct orientation)
+        const stretchedY = normalizedY * cylinderSettings.height - cylinderSettings.height / 2; // Map Y to cylinder height
+
+        // Calculate the new camera position to align the target coordinate at the center
+        const cameraDistance = camera.position.distanceTo(controls.target); // Keep the same camera distance
+        const newCameraPosition = new THREE.Vector3(
+            Math.cos(theta) * cameraDistance,
+            stretchedY,
+            -Math.sin(theta) * cameraDistance // Negate Z for correct orientation
+        );
+
+        // Update the camera position and orientation
+        camera.position.copy(newCameraPosition);
+        camera.lookAt(
+            Math.cos(theta) * cylinderSettings.radius,
+            stretchedY,
+            -Math.sin(theta) * cylinderSettings.radius
+        );
+
+        // Ensure the controls are updated
+        controls.update();
+    }, [camera, controls, cylinderSettings.columns, cylinderSettings.height, cylinderSettings.radius, cylinderSettings.rows]);
+
 
     useEffect(() => {
         centerCoordinate(activeChange?.change?.coord as SimpleCoordinate)
-    }, [activeChange]);
+    }, [activeChange, centerCoordinate]);
     return <div ref={mountRef} style={{width: '100%', height: '100%'}}/>;
 };
 

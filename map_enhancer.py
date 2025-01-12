@@ -144,7 +144,6 @@ def make_castle_changes(coord: Dict[str, Any]) -> None:
         if "transports" not in coord:
             coord["transports"] = []
         coord["transports"].append({"targetName": "despair", "moveCommand": "enter;cs;9 w"})
-    coord["char"] = "X"
 
 
 def add_feature_based_on_char_and_color(coord: Dict[str, Any]) -> None:
@@ -236,7 +235,8 @@ def apply_changes(map_data: Dict[str, Any], changes: List[Dict[str, Any]]) -> Di
             matching_coord["description"] = change["description"]
 
     for coord in coordinates:
-        make_castle_changes(coord)
+        # FIXME: Outworld castle
+        # make_castle_changes(coord)
         remove_duplicates(coord)
 
     return {"coordinates": coordinates}

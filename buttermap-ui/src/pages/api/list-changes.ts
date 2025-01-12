@@ -32,10 +32,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
                     return changes
                 } catch (error) {
                     console.error(`Error reading or parsing file: ${file}`, error);
-                    return false;
+                    return [];
                 }
             }
-            return false;
+            return [];
         });
 
         // Return the list of JSON files with status "PENDING"

@@ -3,13 +3,13 @@
 import React from "react";
 import buttermapStore from "@/app/redux/buttermapStore";
 import {Provider} from "react-redux";
-import {MainContent} from "@/app/mainContent";
+import Index from "@/app/index";
 
 
 export default function ClientOnlyPage() {
     return (
         <Provider store={buttermapStore}>
-            <MainContent/>
+            <Index />
         </Provider>
     )
 }

@@ -59,3 +59,9 @@ export interface CoordinateChange {
     author?: string
     description?: string
 }
+
+export interface PersistedCoordinateChange extends CoordinateChange{
+    author: string
+    timestamp: string
+}
+new Date()

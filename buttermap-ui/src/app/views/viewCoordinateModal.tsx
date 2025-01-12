@@ -1,11 +1,19 @@
 'use client'
 import React, {useCallback, useEffect, useState} from "react";
 import {CoordinateChange, CoordinateFeature} from "@/app/model/coordinate";
-import {setViewModalOpen, useAppDispatch, useAppSelector} from "@/app/redux/buttermapReducer";
+import {
+    setActiveChange,
+    setChanges,
+    setViewModalOpen, showToast,
+    useAppDispatch,
+    useAppSelector
+} from "@/app/redux/buttermapReducer";
 import {ButtermapState} from "@/app/redux/buttermapState";
 import {shallowEqual} from "react-redux";
 import Modal from "@/app/components/modal";
-import {downloadJson} from "@/app/utils";
+import {deepEqual, downloadJson} from "@/app/utils";
+import LabeledButton from "@/app/components/labelledButton";
+import {addChange} from "@/app/service/common";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -27,35 +35,43 @@ const acceptChange = async (fileName: string) => {
 };
 
 const downloadChange = (change: CoordinateChange | null) => {
-    downloadJson(change, `coordinate-change-${Date.now()}.json`)
+    downloadJson(JSON.stringify(change), `coordinate-change-${Date.now()}.json`)
 };
-
-const bm = ["z", "o", "m", "b", "i", "e"]
 
 const ViewCoordinateModal: React.FC = () => {
     const dispatch = useAppDispatch(); // Dispatch actions
 
+    const isLogged = useAppSelector((state: ButtermapState) => state.isLogged, shallowEqual);
     const isOpen = useAppSelector((state: ButtermapState) => state.viewModalOpen, shallowEqual);
     const activeChange = useAppSelector((state: ButtermapState) => state.activeChange, shallowEqual);
     const coordinate = useAppSelector((state: ButtermapState) => state.activeCoordinate, shallowEqual);
 
     const changes = useAppSelector((state: ButtermapState) => state.changes, shallowEqual);
     const [change, setChange] = useState<CoordinateChange | null>(null);
-    const [bestMud, setBestMud] = useState<string>(bm.join(""));
 
-    const doAcceptChange = useCallback(() => {
+    const doAcceptChange = useCallback(async () => {
         if (isDev) {
-            acceptChange(activeChange?.fileName ?? "")
+            await acceptChange(activeChange?.fileName ?? "")
         } else {
-            downloadChange(change)
+            const c = activeChange?.change
+            if (c) {
+                await addChange(c)
+            }
         }
-    }, [change, activeChange]);
+    }, [activeChange]);
 
 
     const onAccept = useCallback(() => {
-        doAcceptChange()
-        dispatch(setViewModalOpen(false));
-    }, [dispatch, change, coordinate]);
+        doAcceptChange().then(() => {
+            dispatch(setViewModalOpen(false));
+            dispatch(setChanges(changes.filter((c) => !deepEqual(c, activeChange?.change))))
+            dispatch(setActiveChange(null))
+        }).catch((err) => {
+            console.error(err)
+            dispatch(showToast({type: "error", message: "Error sending coordinate change"}))
+        })
+
+    }, [doAcceptChange, dispatch, changes, activeChange?.change]);
 
     useEffect(() => {
         if (!coordinate) return;
@@ -75,8 +91,8 @@ const ViewCoordinateModal: React.FC = () => {
         <Modal
             title={"View Coordinate"}
             isOpen={isOpen}
-            onAccept={bestMud.indexOf(bm.join("")) !== -1 && activeChange ? onAccept : undefined}
-            acceptButtonText={isDev ? "Accept" : "Download change file"}
+            onAccept={isLogged && activeChange ? onAccept : undefined}
+            acceptButtonText={isDev ? "Accept" : "Send change"}
             onCancel={() => dispatch(setViewModalOpen(false))}
         >
             <div className="p-6 bg-black rounded-lg shadow-md">
@@ -217,13 +233,10 @@ const ViewCoordinateModal: React.FC = () => {
                                 </p>
                             )}
                         </div>
-                        {/*                        <TextField
-                            label={"Bestmud"}
-                            name={bestMud}
-                            value={bestMud}
-                            onChange={(event) => setBestMud(event.target.value)}/>*/}
                     </section>
                 )}
+
+                <LabeledButton color={"blue"} buttonText={"Download as file"} onClicked={() => downloadChange(change)}/>
             </div>
         </Modal>
     );

@@ -1,16 +1,20 @@
 'use client'
-import Section from "@/app/components/section";
+import Item from "@/app/components/item";
 import ToggleButton from "@/app/components/toggleButton";
 import RadioButtonGroup from "@/app/components/radioButtonGroup";
 import {MapMode} from "@/app/model/common";
 import LabeledButton from "@/app/components/labelledButton";
-import CoordinateChangesList from "@/app/views/coordinateChangesList";
+import UpdatesList from "@/app/views/updatesList";
 import React, {useCallback, useMemo} from "react";
 import {
+    addToast,
+    removeToast,
     resetState,
     setActiveRoute,
+    setAreaModalOpen,
     setAvoidWater,
     setEditModalOpen,
+    setIsLogged,
     setMode,
     setUse3D,
     setViewModalOpen,
@@ -19,23 +23,26 @@ import {
 } from "@/app/redux/buttermapReducer";
 import {ButtermapState} from "@/app/redux/buttermapState";
 import {shallowEqual} from "react-redux";
-import {AnyCoordinate, CoordinateFeature} from "@/app/model/coordinate";
+import {AnyCoordinate, CoordinateFeature, FullCoordinate} from "@/app/model/coordinate";
 import {OptimizedRouteGenerator} from "@/app/map/mapRoute";
-import {deepEqual} from "@/app/utils";
+import {copyTextToClipboard, createRandomId, deepEqual, getAuth} from "@/app/utils";
+import Spacer from "@/app/components/spacer";
+import Accordion from "@/app/components/accordion";
+import LoginComponent from "@/app/views/login";
 
 const modeOptions: { name: string, value: string }[] = Object.entries(MapMode).map((mm) => ({
     name: mm[1],
     value: mm[0]
 }))
 
-export interface ControlsProps {
-}
 
-export const Controls: React.FC<ControlsProps> = () => {
+export const Controls: React.FC = () => {
     const dispatch = useAppDispatch(); // Dispatch actions
+
+    const isLogged = useAppSelector((state: ButtermapState) => state.isLogged, shallowEqual);
     const settings = useAppSelector((state: ButtermapState) => state.settings, shallowEqual);
     const activeChange = useAppSelector((state: ButtermapState) => state.settings.avoidWater, shallowEqual);
-    const activeRoute = useAppSelector((state: ButtermapState) => state.activeRoute, shallowEqual);
+    const activeRoute = useAppSelector((state: ButtermapState) => state.activeRoute, deepEqual);
     const coords = useAppSelector((state: ButtermapState) => state.coords, shallowEqual);
     const activeCoordinate = useAppSelector((state: ButtermapState) => state.activeCoordinate, shallowEqual);
     const highlightedCoords = useAppSelector((state: ButtermapState) => state.highlightedCoords, deepEqual);
@@ -43,7 +50,21 @@ export const Controls: React.FC<ControlsProps> = () => {
 
     const openEditModal = useCallback(() => {
         dispatch(setEditModalOpen(true));
-    }, [])
+    }, [dispatch])
+
+    const openAreaModal = useCallback(() => {
+        dispatch(setAreaModalOpen(true));
+    }, [dispatch])
+
+    const copyToClipboard = useCallback((text: string) => {
+        copyTextToClipboard(text).then(() => {
+            const id = createRandomId()
+            dispatch(addToast({id: id, message: "Copied to clipboard", type: "info"}))
+            setTimeout(() => {
+                dispatch(removeToast(id))
+            }, 2000)
+        })
+    }, [dispatch])
 
 
     const calculateRoute = async () => {
@@ -53,8 +74,8 @@ export const Controls: React.FC<ControlsProps> = () => {
             throw new Error("Route error. Start or end not found")
         }
         console.log("Generating route")
-        const avoidFeatures = [ CoordinateFeature.MOUNTAIN, CoordinateFeature.BLOCKING]
-        if(settings.avoidWater){
+        const avoidFeatures = [CoordinateFeature.MOUNTAIN, CoordinateFeature.BLOCKING]
+        if (settings.avoidWater) {
             avoidFeatures.push(CoordinateFeature.WATER)
         }
         const route = routeGenerator.generateRoute(
@@ -62,14 +83,11 @@ export const Controls: React.FC<ControlsProps> = () => {
             findFullCoord(end),
             {avoidFeatures: avoidFeatures}
         )
-        const routeBack = routeGenerator.generateRoute(
+        route.routeBack = routeGenerator.generateRoute(
             findFullCoord(end),
             findFullCoord(start),
             {avoidFeatures: avoidFeatures}
         )
-
-        route.routeBack = routeBack
-        console.log("Route generated", route)
 
         dispatch(setActiveRoute(route))
     }
@@ -86,7 +104,7 @@ export const Controls: React.FC<ControlsProps> = () => {
 
     const findFullCoord = (coordinate: AnyCoordinate) => {
         const fullerCoord = coords.find(
-            (c) => c.x === coordinate.x && c.y === coordinate.y && c.z === coordinate.z
+            (c: FullCoordinate) => c.x === coordinate.x && c.y === coordinate.y && c.z === coordinate.z
         );
         if (!fullerCoord) {
             throw new Error("Full coord not found")
@@ -96,34 +114,60 @@ export const Controls: React.FC<ControlsProps> = () => {
 
     const handleUse3D = useCallback((use3d: boolean) => {
         dispatch(setUse3D(use3d));
-    }, [])
+    }, [dispatch])
     const handleAvoidVater = useCallback((use3d: boolean) => {
         dispatch(setAvoidWater(use3d));
-    }, [])
+    }, [dispatch])
     const handleMode = useCallback((mapMode: string) => {
         console.log(mapMode)
         dispatch(setMode(mapMode as MapMode));
-    }, [])
+    }, [dispatch])
+    const logout = useCallback(() => {
+        localStorage.removeItem("auth")
+        dispatch(setIsLogged(false))
+    }, [dispatch])
 
-    return <>
-        <Section>
+    const accordionItems = useMemo(() => [
+        {
+            title: isLogged ? getAuth()?.username ?? null: "Login",
+            content: (
+                <>
+                    {!isLogged &&
+                        <LoginComponent/>
+                    }
+                    {isLogged &&
+                        <a className={`text-amber-700 self-end`} onClick={logout}>Logout</a>
+                    }
+                </>
+            )
+
+        }
+    ], [isLogged, logout])
+
+
+    return <div className={"w-full"}>
+        <Item>
+            <Accordion items={accordionItems}/>
+        </Item>
+
+        <Item>
             <ToggleButton label={"Use 3D"} key={"3D"} state={settings.use3D} setState={handleUse3D}/>
-        </Section>
+        </Item>
 
-        <Section>
+        <Item>
             <RadioButtonGroup
                 label={"Mode"}
                 selectedOption={settings.mapMode}
                 setSelectedOption={handleMode}
                 options={modeOptions}
-            /></Section>
+            /></Item>
         {settings.mapMode === MapMode.ROUTE && (
-            <Section>
+            <Item>
                 <ToggleButton label={"Avoid water"} state={settings.avoidWater} setState={handleAvoidVater}/>
-            </Section>
+            </Item>
         )}
 
-        <Section>
+        <Item>
             {highlightedCoords && highlightedCoords.length === 2 && settings.mapMode === MapMode.ROUTE && (
                 <>
                     <LabeledButton buttonText={"Route"} onClicked={calculateRoute}/>
@@ -132,21 +176,44 @@ export const Controls: React.FC<ControlsProps> = () => {
             {highlightedCoords && highlightedCoords.length > 0 && settings.mapMode === MapMode.EDIT && (
                 <LabeledButton buttonText={"Edit"} onClicked={openEditModal}/>
             )}
-        </Section>
+            {activeRoute && (
+                <Item>
+                    <LabeledButton
+                        color={'green'}
+                        buttonText={"Copy dir"}
+                        onClicked={() => copyToClipboard(activeRoute?.directions)}/>
+                    <Spacer/>
+                    <LabeledButton
+                        color={'green'}
+                        buttonText={"Copy dir back"}
+                        onClicked={() => copyToClipboard(activeRoute?.routeBack?.directions ?? "")}/>
+                </Item>
+            )}
+        </Item>
         {activeCoordinate && (
-            <Section>
+            <Item>
                 <LabeledButton color={'blue'} buttonText={"View"} onClicked={viewCoordinate}/>
-            </Section>
+            </Item>
         )}
         {((highlightedCoords && highlightedCoords.length > 0) || activeChange !== null || activeRoute !== null) && (
-            <Section>
+            <Item>
                 <LabeledButton color={'yellow'} buttonText={"Reset"} onClicked={reset}/>
-            </Section>
+            </Item>
         )}
-        <Section>
-            <CoordinateChangesList />
-        </Section>
-    </>;
+
+
+        <Item>
+            <UpdatesList/>
+        </Item>
+
+
+        {highlightedCoords && highlightedCoords.length === 1 && settings.mapMode === MapMode.EDIT && (
+            <Item>
+                <LabeledButton color={'green'} buttonText={"Add area"} onClicked={openAreaModal}/>
+            </Item>
+        )}
+
+    </div>;
 }
 
 export default Controls;

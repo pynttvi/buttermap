@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 interface ColorPickerProps {
     colors: string[]; // Array of hex color codes
     onChange: (selectedColor: string) => void; // Callback when color is selected
+    displayColor?: boolean // Callback when color is selected
 }
 
-const ColorPicker: React.FC<ColorPickerProps> = ({ colors, onChange }) => {
+const ColorPicker: React.FC<ColorPickerProps> = ({colors, onChange, displayColor = false}) => {
     const [selectedColor, setSelectedColor] = useState<string>(colors[0]);
 
     const handleColorSelect = (color: string) => {
@@ -19,7 +20,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ colors, onChange }) => {
                 {colors.map((color) => (
                     <button
                         key={color}
-                        style={{ backgroundColor: color }}
+                        style={{backgroundColor: color}}
                         className={`w-10 h-10 rounded-full border-2 ${
                             selectedColor === color ? "border-black" : "border-transparent"
                         }`}
@@ -27,10 +28,13 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ colors, onChange }) => {
                     />
                 ))}
             </div>
-            <div className="text-center">
-                <span className="text-gray-700">Selected Color:</span>{" "}
-                <span className="font-semibold">{selectedColor}</span>
-            </div>
+            {displayColor && (
+                <div className="text-center">
+                    <span className="text-gray-700">Selected Color:</span>{" "}
+                    <span className="font-semibold">{selectedColor}</span>
+                </div>
+            )}
+
         </div>
     );
 };

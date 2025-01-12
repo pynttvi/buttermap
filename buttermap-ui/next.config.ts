@@ -1,25 +1,15 @@
 import type {NextConfig} from "next";
 import dotenv from 'dotenv';
-import path from 'path';
 
 dotenv.config()
 
-const projectRoot = path.resolve(__dirname);
-const staticPath = path.join(projectRoot, 'public', 'static');
+const isProduction = process.env.NODE_ENV === 'production';
 
-console.log('Project Root:', projectRoot);
-console.log('Static Path:', staticPath);
-const isDev = process.env.NODE_ENV === "development"
 const nextConfig: NextConfig = {
-    output: "export",
-    baseUrl: "./",
+    ...(isProduction ? {output: "export"} : {}),
     reactStrictMode: true,
-    experimental: {
-        turbo: {
-            root: projectRoot
-        }
-    },
-    pageExtensions: ['mdx', 'md', 'jsx', 'js', 'tsx', 'ts'],
+    basePath: isProduction ? '/buttermap' : '',
+    assetPrefix: isProduction ? '/buttermap' : '',
 };
 
 export default nextConfig;

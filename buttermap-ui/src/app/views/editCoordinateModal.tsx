@@ -1,5 +1,5 @@
 'use client'
-import React, {FC, useCallback, useMemo, useState} from 'react';
+import React, {useCallback, useMemo, useState} from 'react';
 import {
     CoordinateChange,
     CoordinateChangeAction,
@@ -15,14 +15,13 @@ import {shallowEqual} from "react-redux";
 import {capitalizeFirstChar, deepEqual, getEnumValue} from "@/app/utils";
 import ToggleButton from "@/app/components/toggleButton";
 import TextField from "@/app/components/textField";
-import Section from "@/app/components/section";
+import Item from "@/app/components/item";
 import colors from "@/app/data/colors.json";
 import ColorPicker from "@/app/components/colorPicker";
 import RadioButtonGroup from "@/app/components/radioButtonGroup";
-const isDev = process.env.NODE_ENV === "development";
+import {addChange} from "@/app/service/common";
 
-interface ModalProps {
-}
+const isDev = process.env.NODE_ENV === "development";
 
 const defaultChange: CoordinateChange = {
     action: CoordinateChangeAction.NONE,
@@ -32,7 +31,6 @@ const defaultChange: CoordinateChange = {
 
 const saveChange = async (coordinateChange: CoordinateChange) => {
     try {
-        console.log("SAVING", coordinateChange);
         const response = await fetch('/api/save-coordinate-change', {
             method: 'POST',
             headers: {
@@ -43,7 +41,7 @@ const saveChange = async (coordinateChange: CoordinateChange) => {
 
         const result = await response.json();
         if (response.ok) {
-            console.error('File saved successfully: ' + result.filePath);
+            console.log('File saved successfully: ' + result.filePath);
         } else {
             console.error('Error saving file: ' + result.error);
         }
@@ -53,7 +51,7 @@ const saveChange = async (coordinateChange: CoordinateChange) => {
     }
 };
 
-const EditCoordinateModal: FC<ModalProps> = () => {
+const EditCoordinateModal: React.FC = () => {
     const changes = useAppSelector((state: ButtermapState) => state.changes, shallowEqual);
     const isOpen = useAppSelector((state: ButtermapState) => state.editModalOpen, shallowEqual);
     const coords = useAppSelector((state: ButtermapState) => state.coords, shallowEqual);
@@ -67,6 +65,8 @@ const EditCoordinateModal: FC<ModalProps> = () => {
 
     const highlightedCoords = useAppSelector((state: ButtermapState) => state.highlightedCoords, deepEqual);
 
+    const isDev = process.env.NODE_ENV === "development";
+
     const onAccept = useCallback(() => {
         highlightedCoords.forEach((coord: SimpleCoordinate) => {
             const fullCoord = coords.find((c) => c.y === coord.y && c.x === coord.x && c.z === coord.z);
@@ -74,14 +74,16 @@ const EditCoordinateModal: FC<ModalProps> = () => {
                 throw new Error("Full coordinate not found");
             }
             const fullChange = {...coordinateChange, coord: fullCoord};
-            if(!isDev){
+            if (isDev) {
                 saveChange(fullChange);
+            } else {
+                addChange(fullChange)
             }
             dispatch(setChanges([...changes, fullChange]));
             dispatch(setEditModalOpen(false));
             setCoordinateChange(defaultChange);
         });
-    }, [coordinateChange]);
+    }, [changes, coordinateChange, coords, dispatch, highlightedCoords]);
 
     const blockFeatures: string[] = useMemo(() => {
         return Object.keys(CoordinateFeature)
@@ -90,15 +92,14 @@ const EditCoordinateModal: FC<ModalProps> = () => {
     }, []);
 
     const isFeatureSelected = useCallback(
-        (key: string) => {
+        (key: keyof typeof CoordinateFeature) => {
             const feature = getEnumValue(CoordinateFeature, key);
             return (coordinateChange.features ?? []).findIndex((bf) => bf === feature) !== -1;
         },
-        [blockFeatures, coordinateChange]
+        [coordinateChange]
     );
 
-    const toggleFeature = useCallback(
-        (blockFeature: string, checked: boolean) => {
+    const toggleFeature = useCallback((blockFeature: keyof typeof CoordinateFeature) => {
             const feature = getEnumValue(CoordinateFeature, blockFeature);
 
             if (!coordinateChange.features) {
@@ -113,7 +114,7 @@ const EditCoordinateModal: FC<ModalProps> = () => {
                 setCoordinateChange({...coordinateChange, features: [...(coordinateChange.features ?? []), feature]});
             }
         },
-        [blockFeatures, coordinateChange]
+        [coordinateChange]
     );
 
     if (!isOpen) return null;
@@ -126,11 +127,11 @@ const EditCoordinateModal: FC<ModalProps> = () => {
             onCancel={() => dispatch(setEditModalOpen(false))}
         >
             {/* Action Section */}
-            <Section>
+            <Item>
                 <RadioButtonGroup
                     label={"Feature action"}
                     selectedOption={coordinateChange.action ?? ""}
-                    setSelectedOption={(option: "NONE" | "ADD" | "REMOVE") =>
+                    setSelectedOption={(option: string) =>
                         setCoordinateChange({...coordinateChange, action: option as CoordinateChangeAction})
                     }
                     options={Object.values(CoordinateChangeAction).map((cc) => ({
@@ -150,18 +151,18 @@ const EditCoordinateModal: FC<ModalProps> = () => {
                                 <CheckBox
                                     key={`feature-${bf}`}
                                     title={bf}
-                                    checked={isFeatureSelected(bf)}
-                                    onChange={(checked) => toggleFeature(bf, checked)}
+                                    checked={isFeatureSelected(bf as keyof typeof CoordinateFeature)}
+                                    onChange={() => toggleFeature(bf as keyof typeof CoordinateFeature)}
                                 />
                             ))}
                     </>
                 )}
-            </Section>
+            </Item>
 
             {/* Name Section */}
             {highlightedCoords && highlightedCoords.length === 1 && (
 
-                <Section>
+                <Item>
                     <ToggleButton label={"Change name"} state={changeName} setState={setChangeName}/>
                     {changeName && (
                         <TextField
@@ -176,11 +177,11 @@ const EditCoordinateModal: FC<ModalProps> = () => {
                             }
                         />
                     )}
-                </Section>
+                </Item>
             )}
 
             {/* Transports Section */}
-            <Section>
+            <Item>
 
                 <ToggleButton label={"Add transport"} state={addTransport} setState={setAddTransport}/>
                 {addTransport && (
@@ -214,11 +215,11 @@ const EditCoordinateModal: FC<ModalProps> = () => {
                         />
                     </>
                 )}
-            </Section>
+            </Item>
 
             {/* Area Section */}
             {highlightedCoords && highlightedCoords.length === 1 && (
-                <Section>
+                <Item>
 
                     <ToggleButton label={"Add area"} state={addArea} setState={setAddArea}/>
                     {addArea && (
@@ -270,12 +271,12 @@ const EditCoordinateModal: FC<ModalProps> = () => {
                             />
                         </>
                     )}
-                </Section>
+                </Item>
             )}
 
             { /* Char and Color Section */
             }
-            <Section>
+            <Item>
 
                 <ToggleButton label={"Change char"} state={changeChar} setState={setChangeChar}/>
                 {changeChar && (
@@ -301,7 +302,7 @@ const EditCoordinateModal: FC<ModalProps> = () => {
                         />
                     </>
                 )}
-            </Section>
+            </Item>
 
         </Modal>
     );
