@@ -162026,7 +162026,13 @@
             "y": 35,
             "z": 0,
             "char": "g",
-            "color": "#007500"
+            "color": "#007500",
+            "features": [
+                7
+            ],
+            "name": "Continent16",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent16"
         },
         {
             "x": 526,
@@ -167901,7 +167907,13 @@
             "y": 37,
             "z": 0,
             "char": "f",
-            "color": "#00FF08"
+            "color": "#00FF08",
+            "features": [
+                7
+            ],
+            "name": "Continent17",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent17"
         },
         {
             "x": 77,
@@ -192898,7 +192910,13 @@
             "y": 42,
             "z": 0,
             "char": "g",
-            "color": "#007500"
+            "color": "#007500",
+            "features": [
+                7
+            ],
+            "name": "Continent18",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent18"
         },
         {
             "x": 231,
@@ -213685,8 +213703,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain22",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain22"
         },
         {
             "x": 61,
@@ -213990,8 +214012,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain11",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain11"
         },
         {
             "x": 99,
@@ -239988,8 +240014,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain33",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain33"
         },
         {
             "x": 99,
@@ -241780,7 +241810,13 @@
             "y": 53,
             "z": 0,
             "char": "g",
-            "color": "#007500"
+            "color": "#007500",
+            "features": [
+                7
+            ],
+            "name": "Continent21",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent21"
         },
         {
             "x": 321,
@@ -251979,8 +252015,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain44",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain44"
         },
         {
             "x": 500,
@@ -251999,8 +252039,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain45",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain45"
         },
         {
             "x": 502,
@@ -252856,7 +252900,13 @@
             "y": 56,
             "z": 0,
             "char": "f",
-            "color": "#00FF08"
+            "color": "#00FF08",
+            "features": [
+                7
+            ],
+            "name": "Continent19",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent19"
         },
         {
             "x": 59,
@@ -255716,8 +255766,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain46",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain46"
         },
         {
             "x": 409,
@@ -264421,7 +264475,13 @@
             "y": 58,
             "z": 0,
             "char": "g",
-            "color": "#007500"
+            "color": "#007500",
+            "features": [
+                7
+            ],
+            "name": "Continent23",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent23"
         },
         {
             "x": 368,
@@ -269366,8 +269426,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain1",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain1"
         },
         {
             "x": 403,
@@ -269420,8 +269484,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain48",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain48"
         },
         {
             "x": 409,
@@ -270180,8 +270248,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain49",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain49"
         },
         {
             "x": 497,
@@ -278643,8 +278715,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain47",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain47"
         },
         {
             "x": 410,
@@ -296479,8 +296555,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain4",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain4"
         },
         {
             "x": 372,
@@ -308182,8 +308262,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain6",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain6"
         },
         {
             "x": 210,
@@ -309108,8 +309192,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain2",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain2"
         },
         {
             "x": 320,
@@ -309118,8 +309206,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain3",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain3"
         },
         {
             "x": 321,
@@ -311860,8 +311952,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain7",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain7"
         },
         {
             "x": 129,
@@ -313966,8 +314062,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain5",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain5"
         },
         {
             "x": 378,
@@ -321415,7 +321515,13 @@
             "y": 71,
             "z": 0,
             "char": "g",
-            "color": "#007500"
+            "color": "#007500",
+            "features": [
+                7
+            ],
+            "name": "Continent1",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent1"
         },
         {
             "x": 218,
@@ -329449,8 +329555,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain8",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain8"
         },
         {
             "x": 144,
@@ -340798,7 +340908,13 @@
             "y": 75,
             "z": 0,
             "char": "g",
-            "color": "#007500"
+            "color": "#007500",
+            "features": [
+                7
+            ],
+            "name": "Continent20",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent20"
         },
         {
             "x": 479,
@@ -354966,8 +355082,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain10",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain10"
         },
         {
             "x": 73,
@@ -355364,8 +355484,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain13",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain13"
         },
         {
             "x": 123,
@@ -363686,8 +363810,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain12",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain12"
         },
         {
             "x": 72,
@@ -367995,8 +368123,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain9",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain9"
         },
         {
             "x": 82,
@@ -382781,7 +382913,13 @@
             "y": 85,
             "z": 0,
             "char": "g",
-            "color": "#007500"
+            "color": "#007500",
+            "features": [
+                7
+            ],
+            "name": "Continent2",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent2"
         },
         {
             "x": 311,
@@ -391090,7 +391228,13 @@
             "y": 87,
             "z": 0,
             "char": "g",
-            "color": "#007500"
+            "color": "#007500",
+            "features": [
+                7
+            ],
+            "name": "Continent3",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent3"
         },
         {
             "x": 265,
@@ -405082,8 +405226,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain14",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain14"
         },
         {
             "x": 413,
@@ -432847,7 +432995,13 @@
             "y": 97,
             "z": 0,
             "char": "Z",
-            "color": "#7B007B"
+            "color": "#7B007B",
+            "features": [
+                7
+            ],
+            "name": "Continent4",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent4"
         },
         {
             "x": 72,
@@ -433401,7 +433555,13 @@
             "y": 97,
             "z": 0,
             "char": "p",
-            "color": "#FFFF00"
+            "color": "#FFFF00",
+            "features": [
+                7
+            ],
+            "name": "Continent11",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent11"
         },
         {
             "x": 131,
@@ -475988,8 +476148,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain15",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain15"
         },
         {
             "x": 397,
@@ -480461,8 +480625,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain20",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain20"
         },
         {
             "x": 379,
@@ -493361,7 +493529,13 @@
             "y": 110,
             "z": 0,
             "char": "p",
-            "color": "#FFFF00"
+            "color": "#FFFF00",
+            "features": [
+                7
+            ],
+            "name": "Continent5",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent5"
         },
         {
             "x": 249,
@@ -503596,8 +503770,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain16",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain16"
         },
         {
             "x": 399,
@@ -507791,8 +507969,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain24",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain24"
         },
         {
             "x": 358,
@@ -517086,8 +517268,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain18",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain18"
         },
         {
             "x": 410,
@@ -521443,8 +521629,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain19",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain19"
         },
         {
             "x": 411,
@@ -532527,7 +532717,13 @@
             "y": 119,
             "z": 0,
             "char": "f",
-            "color": "#00FF08"
+            "color": "#00FF08",
+            "features": [
+                7
+            ],
+            "name": "Continent8",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent8"
         },
         {
             "x": 139,
@@ -535282,7 +535478,13 @@
             "y": 119,
             "z": 0,
             "char": "f",
-            "color": "#00FF08"
+            "color": "#00FF08",
+            "features": [
+                7
+            ],
+            "name": "Continent7",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent7"
         },
         {
             "x": 476,
@@ -538757,8 +538959,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain21",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain21"
         },
         {
             "x": 343,
@@ -547772,8 +547978,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain23",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain23"
         },
         {
             "x": 346,
@@ -552327,8 +552537,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain25",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain25"
         },
         {
             "x": 356,
@@ -552667,8 +552881,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain17",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain17"
         },
         {
             "x": 402,
@@ -576621,8 +576839,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain26",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain26"
         },
         {
             "x": 68,
@@ -576857,8 +577079,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain29",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain29"
         },
         {
             "x": 94,
@@ -576944,8 +577170,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain28",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain28"
         },
         {
             "x": 103,
@@ -581797,8 +582027,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain31",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain31"
         },
         {
             "x": 144,
@@ -581864,8 +582098,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain30",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain30"
         },
         {
             "x": 151,
@@ -585727,8 +585965,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain27",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain27"
         },
         {
             "x": 75,
@@ -596860,7 +597102,13 @@
             "y": 133,
             "z": 0,
             "char": "g",
-            "color": "#007500"
+            "color": "#007500",
+            "features": [
+                7
+            ],
+            "name": "Continent9",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent9"
         },
         {
             "x": 371,
@@ -621429,7 +621677,13 @@
             "y": 139,
             "z": 0,
             "char": "g",
-            "color": "#007500"
+            "color": "#007500",
+            "features": [
+                7
+            ],
+            "name": "Continent10",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent10"
         },
         {
             "x": 219,
@@ -629130,8 +629384,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain35",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain35"
         },
         {
             "x": 79,
@@ -637804,8 +638062,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain40",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain40"
         },
         {
             "x": 47,
@@ -638085,8 +638347,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain39",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain39"
         },
         {
             "x": 85,
@@ -642456,8 +642722,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain34",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain34"
         },
         {
             "x": 88,
@@ -653352,8 +653622,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain41",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain41"
         },
         {
             "x": 355,
@@ -665696,7 +665970,13 @@
             "y": 149,
             "z": 0,
             "char": "g",
-            "color": "#007500"
+            "color": "#007500",
+            "features": [
+                7
+            ],
+            "name": "Continent12",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent12"
         },
         {
             "x": 245,
@@ -673208,8 +673488,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain38",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain38"
         },
         {
             "x": 84,
@@ -677721,8 +678005,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain32",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain32"
         },
         {
             "x": 91,
@@ -682129,8 +682417,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain36",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain36"
         },
         {
             "x": 92,
@@ -684725,7 +685017,13 @@
             "y": 153,
             "z": 0,
             "char": "g",
-            "color": "#007500"
+            "color": "#007500",
+            "features": [
+                7
+            ],
+            "name": "Continent22",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent22"
         },
         {
             "x": 407,
@@ -693120,8 +693418,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain42",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain42"
         },
         {
             "x": 355,
@@ -694220,7 +694522,13 @@
             "y": 155,
             "z": 0,
             "char": "p",
-            "color": "#FFFF00"
+            "color": "#FFFF00",
+            "features": [
+                7
+            ],
+            "name": "Continent6",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent6"
         },
         {
             "x": 485,
@@ -699763,8 +700071,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain37",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain37"
         },
         {
             "x": 89,
@@ -720307,7 +720619,13 @@
             "y": 161,
             "z": 0,
             "char": "j",
-            "color": "#007500"
+            "color": "#007500",
+            "features": [
+                7
+            ],
+            "name": "Continent13",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent13"
         },
         {
             "x": 415,
@@ -749785,8 +750103,12 @@
             "char": "^",
             "color": "#847D84",
             "features": [
-                5
-            ]
+                5,
+                7
+            ],
+            "name": "Mountain43",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Mountain43"
         },
         {
             "x": 143,
@@ -819096,7 +819418,13 @@
             "y": 183,
             "z": 0,
             "char": "f",
-            "color": "#00FF08"
+            "color": "#00FF08",
+            "features": [
+                7
+            ],
+            "name": "Continent15",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent15"
         },
         {
             "x": 123,
@@ -906861,7 +907189,13 @@
             "y": 203,
             "z": 0,
             "char": "G",
-            "color": "#EEEEEE"
+            "color": "#EEEEEE",
+            "features": [
+                7
+            ],
+            "name": "Continent14",
+            "author": "auto-tour",
+            "description": "Auto-added TOUR_START for Continent14"
         },
         {
             "x": 96,

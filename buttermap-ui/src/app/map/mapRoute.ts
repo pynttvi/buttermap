@@ -368,7 +368,7 @@ export class OptimizedRouteGenerator {
                             grid.clone()
                         );
 
-                        if (pathFromTransport.length > 0) {
+                        if (pathFromTransport.length > 0 && options.avoidFeatures.includes(CoordinateFeature.WATER)) {
                             const postTransportDirections = this.convertPathToDirections(pathFromTransport);
 
                             // Combine all route parts

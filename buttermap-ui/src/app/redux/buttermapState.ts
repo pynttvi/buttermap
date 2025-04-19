@@ -1,11 +1,11 @@
 import mudMap from "@/app/data/enhanced_map.json";
-import {ButtermapSettings, MapData, MapMode} from "@/app/model/common";
+import {ButtermapSettings, MapData, MapMode, PersistedData} from "@/app/model/common";
 import {CoordinateChange, FullCoordinate, SimpleCoordinate} from "@/app/model/coordinate";
 import {ChangeFile} from "@/app/views/updatesList";
 import {RouteResult} from "@/app/map/mapRoute";
 import {Toast} from "@/app/redux/buttermapReducer";
 import {Area} from "@/app/model/area";
-import {PersistedData} from "@/app/service/common";
+import {FullTourRoute} from "@/app/views/controls";
 
 const maxValues: { x: number; y: number } = (mudMap as MapData).coordinates.reduce(
     (acc, coord) => ({
@@ -31,6 +31,7 @@ export type ButtermapStateFields = {
 }
 
 export interface ButtermapState extends ButtermapStateFields {
+    activeTour: FullTourRoute | null;
     activeCoordinate: FullCoordinate | null;
     viewModalOpen: boolean;
     areaModalOpen: boolean;
@@ -38,6 +39,8 @@ export interface ButtermapState extends ButtermapStateFields {
     activeChange: ChangeFile | null;
     isLogged: boolean
     persistedData: PersistedData | null
+    tourStarts: FullCoordinate[];
+
 }
 
 export const initialMapState: ButtermapState = {
@@ -59,5 +62,8 @@ export const initialMapState: ButtermapState = {
     activeArea: null,
     toasts: [],
     isLogged: false,
-    persistedData: null
+    persistedData: null,
+    tourStarts: [],
+    activeTour: null
+
 }

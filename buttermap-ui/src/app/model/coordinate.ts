@@ -7,7 +7,8 @@ export enum CoordinateFeature {
     WET = 3,
     TRANSPORT_TARGET = 4,
     MOUNTAIN = 5,
-    CASTLE = 6
+    CASTLE = 6,
+    TOUR_START = 7
 }
 
 export interface SimpleCoordinate {

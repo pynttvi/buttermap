@@ -14,6 +14,7 @@ class CoordinateFeature(Enum):
     TRANSPORT_TARGET = 4
     MOUNTAIN = 5
     CASTLE = 6
+    TOUR_START = 7
 
 
 class CoordinateChangeAction(Enum):
@@ -261,8 +262,26 @@ def main():
     changes = []
     for file_name in os.listdir(CHANGES_FOLDER):
         if file_name.endswith(".json"):
-            change_data = load_json(os.path.join(CHANGES_FOLDER, file_name))
-            changes.append(change_data)
+            file_path = os.path.join(CHANGES_FOLDER, file_name)
+            try:
+                content = load_json(file_path)
+                # Check if it's a map structure (don't treat as a change file)
+                if isinstance(content, dict) and "coordinates" in content:
+                    print(f"ℹ️  Skipped map file: {file_name}")
+                    continue
+                # If it's a list of changes
+                elif isinstance(content, list):
+                    changes.extend(content)
+                    print(f"✅ Loaded {len(content)} changes from {file_name}")
+                # If it's a single change dict
+                elif isinstance(content, dict) and "coord" in content:
+                    changes.append(content)
+                    print(f"✅ Loaded 1 change from {file_name}")
+                else:
+                    print(f"⚠️  Skipped unknown format in {file_name}")
+            except Exception as e:
+                print(f"❌ Failed to load {file_name}: {e}")
+
 
     # Apply changes
     updated_map_data = apply_changes(map_data, changes)

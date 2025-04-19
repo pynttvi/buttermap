@@ -1,4 +1,5 @@
-import {FullCoordinate} from "@/app/model/coordinate";
+import {FullCoordinate, PersistedCoordinateChange} from "@/app/model/coordinate";
+import {PersistedArea} from "@/app/model/area";
 
 export interface MapData {
     coordinates: FullCoordinate[];
@@ -13,4 +14,9 @@ export interface ButtermapSettings {
     avoidWater: boolean;
     use3D: boolean
     mapMode: MapMode
+}
+
+export interface PersistedData {
+    changes: PersistedCoordinateChange[]
+    areas: PersistedArea[]
 }

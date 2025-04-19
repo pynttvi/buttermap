@@ -1,0 +1,508 @@
+{
+  "tour": [
+    {
+      "name": "Continent1",
+      "file": "mass_10_north-63_east-225_south-72_west-212.json",
+      "path": "continent/mass_10_north-63_east-225_south-72_west-212.json",
+      "x": 217,
+      "y": 71
+    },
+    {
+      "name": "Continent2",
+      "file": "mass_11_north-76_east-319_south-86_west-310.json",
+      "path": "continent/mass_11_north-76_east-319_south-86_west-310.json",
+      "x": 310,
+      "y": 85
+    },
+    {
+      "name": "Continent3",
+      "file": "mass_12_north-81_east-265_south-89_west-256.json",
+      "path": "continent/mass_12_north-81_east-265_south-89_west-256.json",
+      "x": 264,
+      "y": 87
+    },
+    {
+      "name": "Continent4",
+      "file": "mass_13_north-96_east-83_south-98_west-70.json",
+      "path": "continent/mass_13_north-96_east-83_south-98_west-70.json",
+      "x": 71,
+      "y": 97
+    },
+    {
+      "name": "Continent5",
+      "file": "mass_14_north-102_east-255_south-111_west-244.json",
+      "path": "continent/mass_14_north-102_east-255_south-111_west-244.json",
+      "x": 248,
+      "y": 110
+    },
+    {
+      "name": "Continent6",
+      "file": "mass_15_north-135_east-539_south-164_west-484.json",
+      "path": "continent/mass_15_north-135_east-539_south-164_west-484.json",
+      "x": 484,
+      "y": 155
+    },
+    {
+      "name": "Continent7",
+      "file": "mass_16_north-111_east-495_south-120_west-475.json",
+      "path": "continent/mass_16_north-111_east-495_south-120_west-475.json",
+      "x": 475,
+      "y": 119
+    },
+    {
+      "name": "Continent8",
+      "file": "mass_17_north-118_east-175_south-133_west-136.json",
+      "path": "continent/mass_17_north-118_east-175_south-133_west-136.json",
+      "x": 138,
+      "y": 119
+    },
+    {
+      "name": "Continent9",
+      "file": "mass_18_north-119_east-376_south-133_west-370.json",
+      "path": "continent/mass_18_north-119_east-376_south-133_west-370.json",
+      "x": 370,
+      "y": 133
+    },
+    {
+      "name": "Continent10",
+      "file": "mass_19_north-139_east-235_south-145_west-217.json",
+      "path": "continent/mass_19_north-139_east-235_south-145_west-217.json",
+      "x": 218,
+      "y": 139
+    },
+    {
+      "name": "Continent11",
+      "file": "mass_1_north-93_east-130_south-97_west-105.json",
+      "path": "continent/mass_1_north-93_east-130_south-97_west-105.json",
+      "x": 130,
+      "y": 97
+    },
+    {
+      "name": "Continent12",
+      "file": "mass_20_north-148_east-259_south-156_west-244.json",
+      "path": "continent/mass_20_north-148_east-259_south-156_west-244.json",
+      "x": 244,
+      "y": 149
+    },
+    {
+      "name": "Continent13",
+      "file": "mass_21_north-154_east-416_south-161_west-405.json",
+      "path": "continent/mass_21_north-154_east-416_south-161_west-405.json",
+      "x": 414,
+      "y": 161
+    },
+    {
+      "name": "Continent14",
+      "file": "mass_22_north-198_east-147_south-203_west-95.json",
+      "path": "continent/mass_22_north-198_east-147_south-203_west-95.json",
+      "x": 95,
+      "y": 203
+    },
+    {
+      "name": "Continent15",
+      "file": "mass_23_north-181_east-136_south-183_west-122.json",
+      "path": "continent/mass_23_north-181_east-136_south-183_west-122.json",
+      "x": 122,
+      "y": 183
+    },
+    {
+      "name": "Continent16",
+      "file": "mass_2_north-33_east-533_south-35_west-520.json",
+      "path": "continent/mass_2_north-33_east-533_south-35_west-520.json",
+      "x": 525,
+      "y": 35
+    },
+    {
+      "name": "Continent17",
+      "file": "mass_3_north-36_east-80_south-41_west-75.json",
+      "path": "continent/mass_3_north-36_east-80_south-41_west-75.json",
+      "x": 76,
+      "y": 37
+    },
+    {
+      "name": "Continent18",
+      "file": "mass_4_north-38_east-237_south-42_west-227.json",
+      "path": "continent/mass_4_north-38_east-237_south-42_west-227.json",
+      "x": 230,
+      "y": 42
+    },
+    {
+      "name": "Continent19",
+      "file": "mass_5_north-45_east-76_south-58_west-54.json",
+      "path": "continent/mass_5_north-45_east-76_south-58_west-54.json",
+      "x": 58,
+      "y": 56
+    },
+    {
+      "name": "Continent20",
+      "file": "mass_6_north-75_east-505_south-83_west-478.json",
+      "path": "continent/mass_6_north-75_east-505_south-83_west-478.json",
+      "x": 478,
+      "y": 75
+    },
+    {
+      "name": "Continent21",
+      "file": "mass_7_north-52_east-324_south-55_west-317.json",
+      "path": "continent/mass_7_north-52_east-324_south-55_west-317.json",
+      "x": 320,
+      "y": 53
+    },
+    {
+      "name": "Continent22",
+      "file": "mass_8_north-153_east-412_south-155_west-404.json",
+      "path": "continent/mass_8_north-153_east-412_south-155_west-404.json",
+      "x": 406,
+      "y": 153
+    },
+    {
+      "name": "Continent23",
+      "file": "mass_9_north-55_east-373_south-58_west-365.json",
+      "path": "continent/mass_9_north-55_east-373_south-58_west-365.json",
+      "x": 367,
+      "y": 58
+    },
+    {
+      "name": "Mountain1",
+      "file": "mountain_10_north-56_east-403_south-59_west-400.json",
+      "path": "mountain/mountain_10_north-56_east-403_south-59_west-400.json",
+      "x": 402,
+      "y": 59
+    },
+    {
+      "name": "Mountain2",
+      "file": "mountain_11_north-64_east-319_south-68_west-314.json",
+      "path": "mountain/mountain_11_north-64_east-319_south-68_west-314.json",
+      "x": 319,
+      "y": 68
+    },
+    {
+      "name": "Mountain3",
+      "file": "mountain_12_north-68_east-327_south-71_west-320.json",
+      "path": "mountain/mountain_12_north-68_east-327_south-71_west-320.json",
+      "x": 320,
+      "y": 68
+    },
+    {
+      "name": "Mountain4",
+      "file": "mountain_13_north-65_east-373_south-71_west-370.json",
+      "path": "mountain/mountain_13_north-65_east-373_south-71_west-370.json",
+      "x": 371,
+      "y": 65
+    },
+    {
+      "name": "Mountain5",
+      "file": "mountain_14_north-66_east-381_south-69_west-377.json",
+      "path": "mountain/mountain_14_north-66_east-381_south-69_west-377.json",
+      "x": 377,
+      "y": 69
+    },
+    {
+      "name": "Mountain6",
+      "file": "mountain_15_north-66_east-211_south-69_west-208.json",
+      "path": "mountain/mountain_15_north-66_east-211_south-69_west-208.json",
+      "x": 209,
+      "y": 68
+    },
+    {
+      "name": "Mountain7",
+      "file": "mountain_16_north-67_east-139_south-70_west-128.json",
+      "path": "mountain/mountain_16_north-67_east-139_south-70_west-128.json",
+      "x": 128,
+      "y": 69
+    },
+    {
+      "name": "Mountain8",
+      "file": "mountain_17_north-69_east-144_south-73_west-142.json",
+      "path": "mountain/mountain_17_north-69_east-144_south-73_west-142.json",
+      "x": 143,
+      "y": 73
+    },
+    {
+      "name": "Mountain9",
+      "file": "mountain_18_north-77_east-84_south-82_west-80.json",
+      "path": "mountain/mountain_18_north-77_east-84_south-82_west-80.json",
+      "x": 81,
+      "y": 82
+    },
+    {
+      "name": "Mountain10",
+      "file": "mountain_19_north-76_east-81_south-79_west-72.json",
+      "path": "mountain/mountain_19_north-76_east-81_south-79_west-72.json",
+      "x": 72,
+      "y": 79
+    },
+    {
+      "name": "Mountain11",
+      "file": "mountain_1_north-42_east-100_south-47_west-98.json",
+      "path": "mountain/mountain_1_north-42_east-100_south-47_west-98.json",
+      "x": 98,
+      "y": 47
+    },
+    {
+      "name": "Mountain12",
+      "file": "mountain_20_north-77_east-79_south-81_west-71.json",
+      "path": "mountain/mountain_20_north-77_east-79_south-81_west-71.json",
+      "x": 71,
+      "y": 81
+    },
+    {
+      "name": "Mountain13",
+      "file": "mountain_21_north-78_east-125_south-80_west-120.json",
+      "path": "mountain/mountain_21_north-78_east-125_south-80_west-120.json",
+      "x": 122,
+      "y": 79
+    },
+    {
+      "name": "Mountain14",
+      "file": "mountain_22_north-80_east-412_south-90_west-406.json",
+      "path": "mountain/mountain_22_north-80_east-412_south-90_west-406.json",
+      "x": 412,
+      "y": 90
+    },
+    {
+      "name": "Mountain15",
+      "file": "mountain_23_north-103_east-397_south-107_west-393.json",
+      "path": "mountain/mountain_23_north-103_east-397_south-107_west-393.json",
+      "x": 396,
+      "y": 106
+    },
+    {
+      "name": "Mountain16",
+      "file": "mountain_24_north-106_east-398_south-112_west-394.json",
+      "path": "mountain/mountain_24_north-106_east-398_south-112_west-394.json",
+      "x": 398,
+      "y": 112
+    },
+    {
+      "name": "Mountain17",
+      "file": "mountain_25_north-113_east-401_south-123_west-394.json",
+      "path": "mountain/mountain_25_north-113_east-401_south-123_west-394.json",
+      "x": 401,
+      "y": 123
+    },
+    {
+      "name": "Mountain18",
+      "file": "mountain_26_north-110_east-409_south-115_west-398.json",
+      "path": "mountain/mountain_26_north-110_east-409_south-115_west-398.json",
+      "x": 409,
+      "y": 115
+    },
+    {
+      "name": "Mountain19",
+      "file": "mountain_27_north-116_east-410_south-120_west-408.json",
+      "path": "mountain/mountain_27_north-116_east-410_south-120_west-408.json",
+      "x": 410,
+      "y": 116
+    },
+    {
+      "name": "Mountain20",
+      "file": "mountain_28_north-107_east-378_south-116_west-373.json",
+      "path": "mountain/mountain_28_north-107_east-378_south-116_west-373.json",
+      "x": 378,
+      "y": 107
+    },
+    {
+      "name": "Mountain21",
+      "file": "mountain_29_north-111_east-355_south-120_west-340.json",
+      "path": "mountain/mountain_29_north-111_east-355_south-120_west-340.json",
+      "x": 342,
+      "y": 120
+    },
+    {
+      "name": "Mountain22",
+      "file": "mountain_2_north-46_east-62_south-49_west-59.json",
+      "path": "mountain/mountain_2_north-46_east-62_south-49_west-59.json",
+      "x": 60,
+      "y": 47
+    },
+    {
+      "name": "Mountain23",
+      "file": "mountain_30_north-119_east-345_south-122_west-341.json",
+      "path": "mountain/mountain_30_north-119_east-345_south-122_west-341.json",
+      "x": 345,
+      "y": 122
+    },
+    {
+      "name": "Mountain24",
+      "file": "mountain_31_north-113_east-362_south-117_west-357.json",
+      "path": "mountain/mountain_31_north-113_east-362_south-117_west-357.json",
+      "x": 357,
+      "y": 113
+    },
+    {
+      "name": "Mountain25",
+      "file": "mountain_32_north-119_east-361_south-123_west-355.json",
+      "path": "mountain/mountain_32_north-119_east-361_south-123_west-355.json",
+      "x": 355,
+      "y": 123
+    },
+    {
+      "name": "Mountain26",
+      "file": "mountain_33_north-127_east-83_south-130_west-67.json",
+      "path": "mountain/mountain_33_north-127_east-83_south-130_west-67.json",
+      "x": 67,
+      "y": 129
+    },
+    {
+      "name": "Mountain27",
+      "file": "mountain_34_north-129_east-74_south-132_west-70.json",
+      "path": "mountain/mountain_34_north-129_east-74_south-132_west-70.json",
+      "x": 74,
+      "y": 131
+    },
+    {
+      "name": "Mountain28",
+      "file": "mountain_35_north-127_east-114_south-130_west-100.json",
+      "path": "mountain/mountain_35_north-127_east-114_south-130_west-100.json",
+      "x": 102,
+      "y": 129
+    },
+    {
+      "name": "Mountain29",
+      "file": "mountain_36_north-128_east-101_south-130_west-93.json",
+      "path": "mountain/mountain_36_north-128_east-101_south-130_west-93.json",
+      "x": 93,
+      "y": 129
+    },
+    {
+      "name": "Mountain30",
+      "file": "mountain_37_north-128_east-154_south-131_west-149.json",
+      "path": "mountain/mountain_37_north-128_east-154_south-131_west-149.json",
+      "x": 150,
+      "y": 130
+    },
+    {
+      "name": "Mountain31",
+      "file": "mountain_38_north-129_east-148_south-130_west-143.json",
+      "path": "mountain/mountain_38_north-129_east-148_south-130_west-143.json",
+      "x": 143,
+      "y": 130
+    },
+    {
+      "name": "Mountain32",
+      "file": "mountain_39_north-141_east-90_south-152_west-81.json",
+      "path": "mountain/mountain_39_north-141_east-90_south-152_west-81.json",
+      "x": 90,
+      "y": 152
+    },
+    {
+      "name": "Mountain33",
+      "file": "mountain_3_north-50_east-104_south-53_west-98.json",
+      "path": "mountain/mountain_3_north-50_east-104_south-53_west-98.json",
+      "x": 98,
+      "y": 53
+    },
+    {
+      "name": "Mountain34",
+      "file": "mountain_40_north-140_east-94_south-144_west-86.json",
+      "path": "mountain/mountain_40_north-140_east-94_south-144_west-86.json",
+      "x": 87,
+      "y": 144
+    },
+    {
+      "name": "Mountain35",
+      "file": "mountain_41_north-137_east-81_south-143_west-75.json",
+      "path": "mountain/mountain_41_north-137_east-81_south-143_west-75.json",
+      "x": 78,
+      "y": 141
+    },
+    {
+      "name": "Mountain36",
+      "file": "mountain_42_north-148_east-91_south-153_west-88.json",
+      "path": "mountain/mountain_42_north-148_east-91_south-153_west-88.json",
+      "x": 91,
+      "y": 153
+    },
+    {
+      "name": "Mountain37",
+      "file": "mountain_43_north-152_east-95_south-157_west-87.json",
+      "path": "mountain/mountain_43_north-152_east-95_south-157_west-87.json",
+      "x": 88,
+      "y": 157
+    },
+    {
+      "name": "Mountain38",
+      "file": "mountain_44_north-150_east-85_south-154_west-82.json",
+      "path": "mountain/mountain_44_north-150_east-85_south-154_west-82.json",
+      "x": 83,
+      "y": 151
+    },
+    {
+      "name": "Mountain39",
+      "file": "mountain_45_north-140_east-86_south-143_west-84.json",
+      "path": "mountain/mountain_45_north-140_east-86_south-143_west-84.json",
+      "x": 84,
+      "y": 143
+    },
+    {
+      "name": "Mountain40",
+      "file": "mountain_46_north-139_east-49_south-143_west-46.json",
+      "path": "mountain/mountain_46_north-139_east-49_south-143_west-46.json",
+      "x": 46,
+      "y": 143
+    },
+    {
+      "name": "Mountain41",
+      "file": "mountain_47_north-141_east-356_south-146_west-354.json",
+      "path": "mountain/mountain_47_north-141_east-356_south-146_west-354.json",
+      "x": 354,
+      "y": 146
+    },
+    {
+      "name": "Mountain42",
+      "file": "mountain_48_north-149_east-360_south-155_west-354.json",
+      "path": "mountain/mountain_48_north-149_east-360_south-155_west-354.json",
+      "x": 354,
+      "y": 155
+    },
+    {
+      "name": "Mountain43",
+      "file": "mountain_49_north-165_east-147_south-168_west-142.json",
+      "path": "mountain/mountain_49_north-165_east-147_south-168_west-142.json",
+      "x": 142,
+      "y": 168
+    },
+    {
+      "name": "Mountain44",
+      "file": "mountain_4_north-50_east-506_south-55_west-498.json",
+      "path": "mountain/mountain_4_north-50_east-506_south-55_west-498.json",
+      "x": 499,
+      "y": 55
+    },
+    {
+      "name": "Mountain45",
+      "file": "mountain_5_north-55_east-511_south-59_west-501.json",
+      "path": "mountain/mountain_5_north-55_east-511_south-59_west-501.json",
+      "x": 501,
+      "y": 55
+    },
+    {
+      "name": "Mountain46",
+      "file": "mountain_6_north-53_east-408_south-56_west-406.json",
+      "path": "mountain/mountain_6_north-53_east-408_south-56_west-406.json",
+      "x": 408,
+      "y": 56
+    },
+    {
+      "name": "Mountain47",
+      "file": "mountain_7_north-56_east-409_south-61_west-406.json",
+      "path": "mountain/mountain_7_north-56_east-409_south-61_west-406.json",
+      "x": 409,
+      "y": 61
+    },
+    {
+      "name": "Mountain48",
+      "file": "mountain_8_north-58_east-409_south-61_west-405.json",
+      "path": "mountain/mountain_8_north-58_east-409_south-61_west-405.json",
+      "x": 408,
+      "y": 59
+    },
+    {
+      "name": "Mountain49",
+      "file": "mountain_9_north-53_east-496_south-59_west-494.json",
+      "path": "mountain/mountain_9_north-53_east-496_south-59_west-494.json",
+      "x": 496,
+      "y": 59
+    }
+  ]
+}

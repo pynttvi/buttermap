@@ -1,0 +1,1082 @@
+[
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 217,
+      "y": 71,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent1",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent1"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 310,
+      "y": 85,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent2",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent2"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 264,
+      "y": 87,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent3",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent3"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 71,
+      "y": 97,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent4",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent4"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 248,
+      "y": 110,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent5",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent5"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 484,
+      "y": 155,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent6",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent6"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 475,
+      "y": 119,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent7",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent7"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 138,
+      "y": 119,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent8",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent8"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 370,
+      "y": 133,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent9",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent9"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 218,
+      "y": 139,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent10",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent10"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 130,
+      "y": 97,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent11",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent11"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 244,
+      "y": 149,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent12",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent12"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 414,
+      "y": 161,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent13",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent13"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 95,
+      "y": 203,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent14",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent14"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 122,
+      "y": 183,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent15",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent15"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 525,
+      "y": 35,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent16",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent16"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 76,
+      "y": 37,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent17",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent17"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 230,
+      "y": 42,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent18",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent18"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 58,
+      "y": 56,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent19",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent19"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 478,
+      "y": 75,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent20",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent20"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 320,
+      "y": 53,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent21",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent21"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 406,
+      "y": 153,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent22",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent22"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 367,
+      "y": 58,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Continent23",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Continent23"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 402,
+      "y": 59,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain1",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain1"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 319,
+      "y": 68,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain2",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain2"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 320,
+      "y": 68,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain3",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain3"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 371,
+      "y": 65,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain4",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain4"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 377,
+      "y": 69,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain5",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain5"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 209,
+      "y": 68,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain6",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain6"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 128,
+      "y": 69,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain7",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain7"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 143,
+      "y": 73,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain8",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain8"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 81,
+      "y": 82,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain9",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain9"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 72,
+      "y": 79,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain10",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain10"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 98,
+      "y": 47,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain11",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain11"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 71,
+      "y": 81,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain12",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain12"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 122,
+      "y": 79,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain13",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain13"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 412,
+      "y": 90,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain14",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain14"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 396,
+      "y": 106,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain15",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain15"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 398,
+      "y": 112,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain16",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain16"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 401,
+      "y": 123,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain17",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain17"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 409,
+      "y": 115,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain18",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain18"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 410,
+      "y": 116,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain19",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain19"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 378,
+      "y": 107,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain20",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain20"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 342,
+      "y": 120,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain21",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain21"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 60,
+      "y": 47,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain22",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain22"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 345,
+      "y": 122,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain23",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain23"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 357,
+      "y": 113,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain24",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain24"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 355,
+      "y": 123,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain25",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain25"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 67,
+      "y": 129,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain26",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain26"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 74,
+      "y": 131,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain27",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain27"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 102,
+      "y": 129,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain28",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain28"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 93,
+      "y": 129,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain29",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain29"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 150,
+      "y": 130,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain30",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain30"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 143,
+      "y": 130,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain31",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain31"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 90,
+      "y": 152,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain32",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain32"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 98,
+      "y": 53,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain33",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain33"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 87,
+      "y": 144,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain34",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain34"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 78,
+      "y": 141,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain35",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain35"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 91,
+      "y": 153,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain36",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain36"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 88,
+      "y": 157,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain37",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain37"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 83,
+      "y": 151,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain38",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain38"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 84,
+      "y": 143,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain39",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain39"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 46,
+      "y": 143,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain40",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain40"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 354,
+      "y": 146,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain41",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain41"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 354,
+      "y": 155,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain42",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain42"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 142,
+      "y": 168,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain43",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain43"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 499,
+      "y": 55,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain44",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain44"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 501,
+      "y": 55,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain45",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain45"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 408,
+      "y": 56,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain46",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain46"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 409,
+      "y": 61,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain47",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain47"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 408,
+      "y": 59,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain48",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain48"
+  },
+  {
+    "action": "ADD",
+    "status": "ACCEPTED",
+    "coord": {
+      "x": 496,
+      "y": 59,
+      "z": 0
+    },
+    "features": [
+      7
+    ],
+    "name": "Mountain49",
+    "author": "auto-tour",
+    "description": "Auto-added TOUR_START for Mountain49"
+  }
+]

@@ -4,13 +4,13 @@ import {TypedUseSelectorHook, useDispatch, useSelector} from 'react-redux';
 
 import {ButtermapState, initialMapState} from "@/app/redux/buttermapState";
 
-import {MapMode} from "@/app/model/common";
+import {MapMode, PersistedData} from "@/app/model/common";
 import {CoordinateChange, FullCoordinate, SimpleCoordinate} from "@/app/model/coordinate";
 import {ChangeFile} from "@/app/views/updatesList";
 import {RouteResult} from "@/app/map/mapRoute";
 import {Area} from "@/app/model/area";
-import {PersistedData} from "@/app/service/common";
 import {createRandomId} from "@/app/utils";
+import {FullTourRoute} from "@/app/views/controls";
 
 export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<ButtermapState> = useSelector;
@@ -22,7 +22,6 @@ export interface Toast {
 }
 
 // Create a slice of state
-
 const buttermapStateSlice = createSlice({
     name: 'buttermap',
     initialState: initialMapState,
@@ -66,6 +65,12 @@ const buttermapStateSlice = createSlice({
         setActiveArea: (state: ButtermapState, action: PayloadAction<Area | null>) => {
             state.activeArea = action.payload;
         },
+        setTourStarts: (state: ButtermapState, action: PayloadAction<FullCoordinate[]>) => {
+            state.tourStarts = action.payload;
+        },
+        setActiveTour: (state: ButtermapState, action: PayloadAction<FullTourRoute | null>) => {
+            state.activeTour = action.payload;
+        },
         resetState: () => {
             return initialMapState
         },
@@ -104,10 +109,12 @@ export const {
     setActiveRoute,
     setActiveCoordinate,
     setActiveArea,
+    setActiveTour,
     resetState,
     addToast,
     removeToast,
     setPersistedData,
+    setTourStarts,
     showToast
 } = buttermapStateSlice.actions;
 

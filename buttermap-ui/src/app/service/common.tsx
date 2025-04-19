@@ -1,11 +1,7 @@
-import {CoordinateChange, PersistedCoordinateChange} from "@/app/model/coordinate";
-import {Area, PersistedArea} from "@/app/model/area";
+import {CoordinateChange} from "@/app/model/coordinate";
+import {Area} from "@/app/model/area";
 import {Auth, getAuth} from "@/app/utils";
-
-export interface PersistedData {
-    changes: PersistedCoordinateChange[]
-    areas: PersistedArea[]
-}
+import {PersistedData} from "@/app/model/common";
 
 const baseUrl = "https://buttermap-backend.vercel.app"
 export const fetchData = async (

@@ -4,7 +4,8 @@ import {CoordinateChange, CoordinateFeature} from "@/app/model/coordinate";
 import {
     setActiveChange,
     setChanges,
-    setViewModalOpen, showToast,
+    setViewModalOpen,
+    showToast,
     useAppDispatch,
     useAppSelector
 } from "@/app/redux/buttermapReducer";
@@ -14,6 +15,7 @@ import Modal from "@/app/components/modal";
 import {deepEqual, downloadJson} from "@/app/utils";
 import LabeledButton from "@/app/components/labelledButton";
 import {addChange} from "@/app/service/common";
+import Item from "@/app/components/item";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -45,6 +47,8 @@ const ViewCoordinateModal: React.FC = () => {
     const isOpen = useAppSelector((state: ButtermapState) => state.viewModalOpen, shallowEqual);
     const activeChange = useAppSelector((state: ButtermapState) => state.activeChange, shallowEqual);
     const coordinate = useAppSelector((state: ButtermapState) => state.activeCoordinate, shallowEqual);
+    const activeRoute = useAppSelector((state: ButtermapState) => state.activeRoute, shallowEqual);
+    const activeTour = useAppSelector((state: ButtermapState) => state.activeTour, shallowEqual);
 
     const changes = useAppSelector((state: ButtermapState) => state.changes, shallowEqual);
     const [change, setChange] = useState<CoordinateChange | null>(null);
@@ -236,6 +240,25 @@ const ViewCoordinateModal: React.FC = () => {
                     </section>
                 )}
 
+                <section>
+
+                    {activeTour && (
+                        <>
+                            <Item key={`dirs-to-start`}>
+                                <label>Dirs to start:</label>
+                                <div> {activeTour.startDirs}</div>
+                            </Item>
+                            <Item key={`route-route`}>
+                                <label>Route:</label>
+                                <div> {activeTour.dirs}</div>
+                            </Item>
+                            <Item key={`dirs-back`}>
+                                <label>Back to cs:</label>
+                                <div> {activeTour.backDirs}</div>
+                            </Item>
+                        </>
+                    )}
+                </section>
                 <LabeledButton color={"blue"} buttonText={"Download as file"} onClicked={() => downloadChange(change)}/>
             </div>
         </Modal>

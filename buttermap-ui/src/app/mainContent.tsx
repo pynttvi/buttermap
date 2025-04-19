@@ -6,6 +6,7 @@ import {
     setHighlightedCoords,
     setIsLogged,
     setPersistedData,
+    setTourStarts,
     useAppDispatch,
     useAppSelector
 } from "@/app/redux/buttermapReducer";
@@ -13,7 +14,7 @@ import {shallowEqual} from "react-redux";
 import {MapMode} from "@/app/model/common";
 import CylinderMap from "@/app/map/cylinderMap";
 import EditCoordinateModal from "@/app/views/editCoordinateModal";
-import {AnyCoordinate, SimpleCoordinate} from "@/app/model/coordinate";
+import {AnyCoordinate, CoordinateFeature, SimpleCoordinate} from "@/app/model/coordinate";
 import {deepEqual} from "@/app/utils";
 import Controls from "@/app/views/controls";
 import ViewCoordinateModal from "@/app/views/viewCoordinateModal";
@@ -28,6 +29,7 @@ export const MainContent: React.FC = () => {
     const settings = useAppSelector((state: ButtermapState) => state.settings, shallowEqual);
     const coords = useAppSelector((state: ButtermapState) => state.coords, shallowEqual);
     const highlightedCoords = useAppSelector((state: ButtermapState) => state.highlightedCoords, deepEqual);
+
 
     useEffect(() => {
         const auth = localStorage.getItem("auth")

@@ -79,7 +79,7 @@ const CylinderMap: React.FC<CylinderMapProps> = ({gridData, onDoubleClick}) => {
     );
     const highlightedCoords = useAppSelector(
         (state: ButtermapState) => state.highlightedCoords,
-        shallowEqual
+        deepEqual
     );
     const coordinateChanges = useAppSelector(
         (state: ButtermapState) => state.changes,
@@ -91,6 +91,11 @@ const CylinderMap: React.FC<CylinderMapProps> = ({gridData, onDoubleClick}) => {
     );
     const activeRoute = useAppSelector(
         (state: ButtermapState) => state.activeRoute,
+        deepEqual
+    );
+
+    const tourStarts = useAppSelector(
+        (state: ButtermapState) => state.tourStarts,
         deepEqual
     );
 
@@ -305,6 +310,13 @@ const CylinderMap: React.FC<CylinderMapProps> = ({gridData, onDoubleClick}) => {
                 activeRoute?.routeCoordinates?.forEach((coord: SimpleCoordinate) => {
                     if (coord && coord.x === x && coord.y === y) {
                         ctx.fillStyle = 'amber';
+                        ctx.fillRect(x * cylinderSettings.charSize, y * cylinderSettings.charSize, cylinderSettings.charSize, cylinderSettings.charSize);
+                    }
+                });
+
+                tourStarts?.forEach((coord: SimpleCoordinate) => {
+                    if (coord && coord.x === x && coord.y === y) {
+                        ctx.fillStyle = 'green';
                         ctx.fillRect(x * cylinderSettings.charSize, y * cylinderSettings.charSize, cylinderSettings.charSize, cylinderSettings.charSize);
                     }
                 });
